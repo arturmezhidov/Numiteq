@@ -1,0 +1,176 @@
+﻿@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamPro-Light.eot");
+    src: url("../fonts/GothamPro/GothamPro-Light.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamPro-Light.woff") format("woff"), url("../fonts/GothamPro/GothamPro-Light.ttf") format("truetype"), url("../fonts/GothamPro/GothamPro-Light.svg") format("svg");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamPro-LightItalic.eot");
+    src: url("../fonts/GothamPro/GothamPro-LightItalic.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamPro-LightItalic.woff") format("woff"), url("../fonts/GothamPro/GothamPro-LightItalic.ttf") format("truetype"), url("../fonts/GothamPro/GothamPro-LightItalic.svg") format("svg");
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamPro.eot");
+    src: url("../fonts/GothamPro/GothamPro.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamPro.woff") format("woff"), url("../fonts/GothamPro/GothamPro.ttf") format("truetype"), url("../fonts/GothamPro/GothamPro.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamPro-Italic.eot");
+    src: url("../fonts/GothamPro/GothamPro-Italic.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamPro-Italic.woff") format("woff"), url("../fonts/GothamPro/GothamPro-Italic.ttf") format("truetype"), url("../fonts/GothamPro/GothamPro-Italic.svg") format("svg");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamPro-Medium.eot");
+    src: url("../fonts/GothamPro/GothamPro-Medium.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamPro-Medium.woff") format("woff"), url("../fonts/GothamPro/GothamPro-Medium.ttf") format("truetype"), url("../fonts/GothamPro/GothamPro-Medium.svg") format("svg");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamPro-MediumItalic.eot");
+    src: url("../fonts/GothamPro/GothamPro-MediumItalic.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamPro-MediumItalic.woff") format("woff"), url("../fonts/GothamPro/GothamPro-MediumItalic.ttf") format("truetype"), url("../fonts/GothamPro/GothamPro-MediumItalic.svg") format("svg");
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamPro-Bold.eot");
+    src: url("../fonts/GothamPro/GothamPro-Bold.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamPro-Bold.woff") format("woff"), url("../fonts/GothamPro/GothamPro-Bold.ttf") format("truetype"), url("../fonts/GothamPro/GothamPro-Bold.svg") format("svg");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamPro-BoldItalic.eot");
+    src: url("../fonts/GothamPro/GothamPro-BoldItalic.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamPro-BoldItalic.woff") format("woff"), url("../fonts/GothamPro/GothamPro-BoldItalic.ttf") format("truetype"), url("../fonts/GothamPro/GothamPro-BoldItalic.svg") format("svg");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamProNarrow-Medium.eot");
+    src: url("../fonts/GothamPro/GothamProNarrow-Medium.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamProNarrow-Medium.woff") format("woff"), url("../fonts/GothamPro/GothamProNarrow-Medium.ttf") format("truetype"), url("../fonts/GothamPro/GothamProNarrow-Medium.svg") format("svg");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamProNarrow-Bold.eot");
+    src: url("../fonts/GothamPro/GothamProNarrow-Bold.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamProNarrow-Bold.woff") format("woff"), url("../fonts/GothamPro/GothamProNarrow-Bold.ttf") format("truetype"), url("../fonts/GothamPro/GothamProNarrow-Bold.svg") format("svg");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamPro-Black.eot");
+    src: url("../fonts/GothamPro/GothamPro-Black.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamPro-Black.woff") format("woff"), url("../fonts/GothamPro/GothamPro-Black.ttf") format("truetype"), url("../fonts/GothamPro/GothamPro-Black.svg") format("svg");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamPro-BlackItalic.eot");
+    src: url("../fonts/GothamPro/GothamPro-BlackItalic.eot") format("embedded-opentype"), url("../fonts/GothamPro/GothamPro-BlackItalic.woff") format("woff"), url("../fonts/GothamPro/GothamPro-BlackItalic.ttf") format("truetype"), url("../fonts/GothamPro/GothamPro-BlackItalic.svg") format("svg");
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/OpenSans.eot");
+    src: url("../fonts/OpenSans/OpenSans.eot") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans.woff") format("woff"), url("../fonts/OpenSans/OpenSans.ttf") format("truetype"), url("../fonts/OpenSans/OpenSans.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/OpenSans-Bold.eot");
+    src: url("../fonts/OpenSans/OpenSans-Bold.eot") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Bold.ttf") format("truetype"), url("../fonts/OpenSans/OpenSans-Bold.svg") format("svg");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/OpenSans-BoldItalic.eot");
+    src: url("../fonts/OpenSans/OpenSans-BoldItalic.eot") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-BoldItalic.woff") format("woff"), url("../fonts/OpenSans/OpenSans-BoldItalic.ttf") format("truetype"), url("../fonts/OpenSans/OpenSans-BoldItalic.svg") format("svg");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/OpenSans-Extrabold.eot");
+    src: url("../fonts/OpenSans/OpenSans-Extrabold.eot") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-Extrabold.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Extrabold.ttf") format("truetype"), url("../fonts/OpenSans/OpenSans-Extrabold.svg") format("svg");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/OpenSans-ExtraboldItalic.eot");
+    src: url("../fonts/OpenSans/OpenSans-ExtraboldItalic.eot") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-ExtraboldItalic.woff") format("woff"), url("../fonts/OpenSans/OpenSans-ExtraboldItalic.ttf") format("truetype"), url("../fonts/OpenSans/OpenSans-ExtraboldItalic.svg") format("svg");
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/OpenSans-Italic.eot");
+    src: url("../fonts/OpenSans/OpenSans-Italic.eot") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-Italic.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Italic.ttf") format("truetype"), url("../fonts/OpenSans/OpenSans-Italic.svg") format("svg");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/OpenSans-Light.eot");
+    src: url("../fonts/OpenSans/OpenSans-Light.eot") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-Light.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Light.ttf") format("truetype"), url("../fonts/OpenSans/OpenSans-Light.svg") format("svg");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/OpenSansLight-Italic.eot");
+    src: url("../fonts/OpenSans/OpenSansLight-Italic.eot") format("embedded-opentype"), url("../fonts/OpenSans/OpenSansLight-Italic.woff") format("woff"), url("../fonts/OpenSans/OpenSansLight-Italic.ttf") format("truetype"), url("../fonts/OpenSans/OpenSansLight-Italic.svg") format("svg");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/OpenSans-Semibold.eot");
+    src: url("../fonts/OpenSans/OpenSans-Semibold.eot") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-Semibold.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Semibold.ttf") format("truetype"), url("../fonts/OpenSans/OpenSans-Semibold.svg") format("svg");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans/OpenSans-SemiboldItalic.eot");
+    src: url("../fonts/OpenSans/OpenSans-SemiboldItalic.eot") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-SemiboldItalic.woff") format("woff"), url("../fonts/OpenSans/OpenSans-SemiboldItalic.ttf") format("truetype"), url("../fonts/OpenSans/OpenSans-SemiboldItalic.svg") format("svg");
+    font-weight: 500;
+    font-style: italic;
+}
