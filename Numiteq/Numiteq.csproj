@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Numiteq.BusinessLogic.BusinessContracts\Numiteq.BusinessLogic.BusinessContracts.csproj" />
+    <ProjectReference Include="..\Numiteq.Common.DependencyInjection\Numiteq.Common.DependencyInjection.csproj" />
   </ItemGroup>
 
 </Project>

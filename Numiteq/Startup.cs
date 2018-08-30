@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Numiteq.Data;
-using Numiteq.Models;
 using Numiteq.Services;
+using Numiteq.Common.DependencyInjection;
+using Numiteq.BusinessLogic.BusinessContracts;
 
 namespace Numiteq
 {
@@ -23,20 +23,21 @@ namespace Numiteq
 
         public IConfiguration Configuration { get; }
 
+        public IServiceProvider ServiceProvider { get; set; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDataAccess(Configuration.GetConnectionString("DefaultConnection"));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+            services.AddBusinessComponents();
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
+            ServiceProvider = services.BuildServiceProvider();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +64,15 @@ namespace Numiteq
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            InitDatabase();
+        }
+
+        private void InitDatabase()
+        {
+            ServiceProvider
+                .GetRequiredService<IDatabaseService>()
+                .InitDatabase();
         }
     }
 }

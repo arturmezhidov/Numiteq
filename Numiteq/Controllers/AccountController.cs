@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Numiteq.Models;
+using Numiteq.Common.Entities;
 using Numiteq.Models.AccountViewModels;
 using Numiteq.Services;
 
