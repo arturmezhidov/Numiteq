@@ -38,7 +38,6 @@ namespace Numiteq.BusinessLogic.BusinessComponents
             }
 
             entity = repository.Update(entity);
-            unitOfWork.Save();
 
             return entity;
         }
@@ -89,6 +88,11 @@ namespace Numiteq.BusinessLogic.BusinessComponents
         {
             IQueryable<TEntity> result = repository.GetAll();
             return result;
+        }
+
+        protected void Save()
+        {
+            unitOfWork.Save();
         }
 
         protected override void OnDisposing()
