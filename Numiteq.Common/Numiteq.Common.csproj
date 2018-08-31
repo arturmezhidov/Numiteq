@@ -4,8 +4,4 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Numiteq.Common.Entities\Numiteq.Common.Entities.csproj" />
-  </ItemGroup>
-
 </Project>
