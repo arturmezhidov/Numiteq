@@ -1,35 +1,92 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
+﻿* {
+  font-family: "OpenSans";
+  font-size: 22px;
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  background: black; }
+
+a:link,
+a:visited,
+a:hover {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  cursor: pointer;
+  transition: 1s ease-out; }
+
+.button-bg-fill {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: 1s ease-out; }
+  .button-bg-fill:hover {
+    background: rgba(255, 255, 255, 0.05); }
+  .button-bg-fill .nav-link {
+    padding: 16px 37px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7); }
+    .button-bg-fill .nav-link:hover {
+      color: rgba(255, 255, 255, 0.9); }
+  .button-bg-fill .nav-item {
+    padding: 0; }
+
+.navbar {
+  margin: 20px 40px; }
+  .navbar a:hover {
+    color: rgba(255, 255, 255, 0.9); }
+  .navbar .logo {
+    height: 57px; }
+  .navbar .navbar-nav {
+    color: rgba(255, 255, 255, 0.5);
+    list-style-type: none; }
+    .navbar .navbar-nav .button-bg-fill {
+      margin-left: 20px; }
+      .navbar .navbar-nav .button-bg-fill .nav-link {
+        padding: 16px 37px; }
+    .navbar .navbar-nav .nav-link {
+      padding: 20px;
+      font-size: 13px;
+      line-height: 10px;
+      text-transform: uppercase; }
+
+footer .navbar-nav {
+  width: 380px; }
+
+footer .footer-but svg {
+  margin-bottom: -4px;
+  margin-right: 12px; }
+
+footer .footer-but .copyrights {
+  margin-top: 15px;
+  font-size: 11px;
+  text-align: center; }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
+  height: 500px;
+  padding-left: 15px;
+  padding-right: 15px; }
 
 /* Carousel */
 .carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
+  font-size: 20px;
+  line-height: 1.4; }
 
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
+  width: 100%; }
 
 /* QR code generator */
 #qrCode {
-    margin: 15px;
-}
+  margin: 15px; }
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
-}
+  /* Hide captions */
+  .carousel-caption {
+    display: none; } }
+
