@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numiteq.Common.DependencyIn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numiteq.Common.Entities", "Numiteq.Common.Entities\Numiteq.Common.Entities.csproj", "{C1F0258F-03C0-4596-A7D7-6005F1AC9704}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numiteq.Common", "Numiteq.Common\Numiteq.Common.csproj", "{0F20412F-7826-40CD-B3F6-C301276F730E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Numiteq.Common", "Numiteq.Common\Numiteq.Common.csproj", "{0F20412F-7826-40CD-B3F6-C301276F730E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numiteq.DataAccess.Initialization", "Numiteq.DataAccess.Initialization\Numiteq.DataAccess.Initialization.csproj", "{536F186B-CDD8-4AB0-8778-C4230648B3FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{0F20412F-7826-40CD-B3F6-C301276F730E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F20412F-7826-40CD-B3F6-C301276F730E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F20412F-7826-40CD-B3F6-C301276F730E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536F186B-CDD8-4AB0-8778-C4230648B3FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536F186B-CDD8-4AB0-8778-C4230648B3FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536F186B-CDD8-4AB0-8778-C4230648B3FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536F186B-CDD8-4AB0-8778-C4230648B3FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{5FBCC838-52FA-4044-BB05-6CB6CFB5E26C} = {039FA461-8293-4BB8-8F65-0546CDB21BCE}
 		{C1F0258F-03C0-4596-A7D7-6005F1AC9704} = {039FA461-8293-4BB8-8F65-0546CDB21BCE}
 		{0F20412F-7826-40CD-B3F6-C301276F730E} = {039FA461-8293-4BB8-8F65-0546CDB21BCE}
+		{536F186B-CDD8-4AB0-8778-C4230648B3FA} = {5384890E-6E17-4D51-B982-E1AE92C4AD75}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0C6644CD-49A0-4502-9F09-8BFBFDCA518C}

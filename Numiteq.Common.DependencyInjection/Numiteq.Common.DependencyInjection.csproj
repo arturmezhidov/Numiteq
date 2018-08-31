@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Numiteq.BusinessLogic.BusinessComponents\Numiteq.BusinessLogic.BusinessComponents.csproj" />
     <ProjectReference Include="..\Numiteq.BusinessLogic.BusinessContracts\Numiteq.BusinessLogic.BusinessContracts.csproj" />
+    <ProjectReference Include="..\Numiteq.DataAccess.Initialization\Numiteq.DataAccess.Initialization.csproj" />
     <ProjectReference Include="..\Numiteq.DataAccess.SqlDataAccess\Numiteq.DataAccess.SqlDataAccess.csproj" />
   </ItemGroup>
 

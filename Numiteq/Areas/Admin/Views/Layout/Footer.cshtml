@@ -1,0 +1,112 @@
+﻿@model Numiteq.Areas.Admin.ViewModels.Settings.FooterViewModel
+@{
+    ViewData["Title"] = "Footer settings";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            
+            <h4>Footer</h4>
+            <div class="form-group">
+                <label asp-for="FooterTitle"></label>
+                <input asp-for="FooterTitle" class="form-control" />
+                <span asp-validation-for="FooterTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FooterContent"></label>
+                <textarea asp-for="FooterContent" class="form-control"></textarea>
+                <span asp-validation-for="FooterContent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ButtonText"></label>
+                <input asp-for="ButtonText" class="form-control" />
+                <span asp-validation-for="ButtonText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ButtonLink"></label>
+                <input asp-for="ButtonLink" class="form-control" />
+                <span asp-validation-for="ButtonLink" class="text-danger"></span>
+            </div>
+
+            <h4>Footer link 1</h4>
+            <div class="form-group">
+                <label asp-for="Link1Title"></label>
+                <input asp-for="Link1Title" class="form-control" />
+                <span asp-validation-for="Link1Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Link1Url"></label>
+                <input asp-for="Link1Url" class="form-control" />
+                <span asp-validation-for="Link1Url" class="text-danger"></span>
+            </div>
+
+            <h4>Footer link 2</h4>
+            <div class="form-group">
+                <label asp-for="Link2Title"></label>
+                <input asp-for="Link2Title" class="form-control" />
+                <span asp-validation-for="Link2Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Link2Url"></label>
+                <input asp-for="Link2Url" class="form-control" />
+                <span asp-validation-for="Link2Url" class="text-danger"></span>
+            </div>
+
+            <h4>Footer link 3</h4>
+            <div class="form-group">
+                <label asp-for="Link3Title"></label>
+                <input asp-for="Link3Title" class="form-control" />
+                <span asp-validation-for="Link3Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Link3Url"></label>
+                <input asp-for="Link3Url" class="form-control" />
+                <span asp-validation-for="Link3Url" class="text-danger"></span>
+            </div>
+
+            <h4>Footer link 4</h4>
+            <div class="form-group">
+                <label asp-for="Link4Title"></label>
+                <input asp-for="Link4Title" class="form-control" />
+                <span asp-validation-for="Link4Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Link4Url"></label>
+                <input asp-for="Link4Url" class="form-control" />
+                <span asp-validation-for="Link4Url" class="text-danger"></span>
+            </div>
+
+            <h4>Footer link 5</h4>
+            <div class="form-group">
+                <label asp-for="Link5Title"></label>
+                <input asp-for="Link5Title" class="form-control" />
+                <span asp-validation-for="Link5Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Link5Url"></label>
+                <input asp-for="Link5Url" class="form-control" />
+                <span asp-validation-for="Link5Url" class="text-danger"></span>
+            </div>
+
+            <h4>Footer link 6</h4>
+            <div class="form-group">
+                <label asp-for="Link6Title"></label>
+                <input asp-for="Link6Title" class="form-control" />
+                <span asp-validation-for="Link6Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Link6Url"></label>
+                <input asp-for="Link6Url" class="form-control" />
+                <span asp-validation-for="Link6Url" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-default">Save</button>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

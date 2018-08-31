@@ -27,8 +27,10 @@ namespace Numiteq.BusinessLogic.BusinessComponents
 
             foreach (var property in info.Properties)
             {
-                Setting setting = settings[property.Key];
-                property.Property.SetValue(obj, setting?.Value);
+                if (settings.ContainsKey(property.Key))
+                {
+                    property.Property.SetValue(obj, settings[property.Key].Value);
+                }
             }
 
             return obj;
@@ -88,24 +90,24 @@ namespace Numiteq.BusinessLogic.BusinessComponents
                 Properties = GetProperties(type)
             };
 
-            info.Keys = GetKeys(type, info.Properties);
+            info.Keys = GetKeys(info.Properties);
 
             return info;
         }
 
         private ObjectProperty[] GetProperties(Type type)
         {
+            string nameSpace = GetTypeNamespace(type);
             return type.GetProperties().Select(p => new ObjectProperty
             {
                 Property = p,
-                Key = GetPropertyKey(p)
+                Key = GetPropertyKey(p, nameSpace)
             }).ToArray();
         }
 
-        private string[] GetKeys(Type type, ObjectProperty[] properties)
+        private string[] GetKeys(ObjectProperty[] properties)
         {
-            string nameSpace = GetTypeNamespace(type);
-            return properties.Select(p => String.Format("{0}.{1}", nameSpace, p.Key)).ToArray();
+            return properties.Select(p => p.Key).ToArray();
         }
 
         private string GetTypeNamespace(Type type)
@@ -113,9 +115,10 @@ namespace Numiteq.BusinessLogic.BusinessComponents
             return type.GetCustomAttribute<SettingsTypeAttribute>()?.Namespace ?? type.FullName;
         }
 
-        private string GetPropertyKey(PropertyInfo property)
+        private string GetPropertyKey(PropertyInfo property, string nameSpace)
         {
-            return property.GetCustomAttribute<SettingsKeyAttribute>()?.Key ?? property.Name;
+            string key = property.GetCustomAttribute<SettingsKeyAttribute>()?.Key ?? property.Name;
+            return String.Format("{0}.{1}", nameSpace, key);
         }
 
         private class SettingsObjectInfo

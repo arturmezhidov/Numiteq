@@ -5,10 +5,12 @@ namespace Numiteq.DataAccess.SqlDataAccess
     public class DatabaseInitializer : IDatabaseInitializer
     {
         private readonly DataContext context;
+        private readonly IInitializationDataStorage storage;
 
-        public DatabaseInitializer(DataContext context)
+        public DatabaseInitializer(DataContext context, IInitializationDataStorage storage)
         {
             this.context = context;
+            this.storage = storage;
         }
 
         public void Init()
@@ -17,7 +19,8 @@ namespace Numiteq.DataAccess.SqlDataAccess
 
             if (isCreated)
             {
-                // TODO: init data
+                context.Settings.AddRange(storage.GetSettings());
+                context.SaveChanges();
             }
         }
     }

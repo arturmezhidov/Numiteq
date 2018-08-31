@@ -9,6 +9,7 @@ namespace Numiteq.Common.DependencyInjection
         public static IServiceCollection AddBusinessComponents(this IServiceCollection services)
         {
             services.AddScoped<IDatabaseService, DatabaseService>();
+            services.AddScoped<ISettingService, SettingService>();
 
             return services;
         }
