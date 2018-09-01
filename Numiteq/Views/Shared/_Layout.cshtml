@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
+
 <body>
     <header>
         <nav class="navbar d-flex fixed-top flex-row justify-content-between align-items-center p-0">
@@ -42,90 +43,89 @@
             </ul>
         </nav>
     </header>
+    @RenderBody()
+    <div class="container body-content">
 
-        <div class="container body-content">
-            @RenderBody()
-            <br />
 
-            <footer>
-                <nav class="navbar d-flex flex-row justify-content-between align-items-center m-0 p-0">
-                    <a asp-area="" asp-controller="Home" asp-action="Index">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="136" height="57" viewBox="0 0 136 57">
-                            <image id="logo" width="136" height="57" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIgAAAA5CAYAAADtLGOCAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4ggbDwkLbXyuigAAET9JREFUeNrtXWuQHNV1/k5PP6a757GSVloBQlphouAAAccyXmmlPCzyJI9CgkIolEPFrlQwEiZlp5wqnHIKHBeUXa7kDzgxSeGyvTJxQXg5powESIAlKEe4UhXxsKPHvsRqd2d259Hv7pMfPTOa2e2Z6VkJBob9qlSq7b59+/bp0+ec+51z7xAuIG7cufM+3/O/FASBVH9cEASkMxlkMxmomopsNoOJiUkUCoWobgoA7tg/MjJyIce2jKWBLkQnO3fuusH3/e/4vr+qekwURfT19SGTzUDTdBBVb8VYvbofnudh3SXr8Oabb+L06Cgcx1nY7VsAdu4fGTnebSF9mHFeCrJz166NgR887nnetQCgqiqyfX1Ip9NIJpOR16TTKSSTCgDAdV1sHNwIIsLc3ByOHz+Os9PTCIKg2pwBPA3g1v0jI0a3hfVhxJIUZOeuXTIH/Ijv+7ek0ikhk8kinU5DFMWW1/m+j7Vr1zQccxwHl228rGZhmBmnT5/GL375SxSLxVozAF/dPzJyX7cF9mFDxwpy6549X0wmk3+f0lMZTdchCEIHV4fuZSEcx8HGwY2L+nIcB8ffeAPj4+NVFzQN4NP7R0ae7bbgPiyIrSDDw8PbGPjeFVdcsWHNmoG6mCI+Mpk0FEWOPOc4Djas39DUCs3OzuL4G29gdnaWgyA4BuDG/SMjY90WYK+j7Vvetn17v2kYjxumua2vr48GBwdBRFi1qh+pVCr2jaLcy0I4joP1l66HJElN2zAzTpw4gVOnTzumaf7QcZzb94+MeN0WZK+ipYIMbdnyxdmZmfs9z0ukUikMDAxg9ZpzL1mWZQwMrEUikYhxq2j3shCu6+Liiy9BUlHatrUsC6OjoyXLtm+97957n+m2MHsRTQOIbdu3r5mdmbnfdd1ENpuF67rQdL2hjeM4GBsbRT6fa3ujTCYTa0CSJGFycgKmabZtm0wmsWnTppSuad/utiB7FU0//dWrVz9bKpUGM9ksbNsGEWHdunWRsYdt2ygWi1BVNdKa+L6Pvr54CgIAiUQChWIBkiRBluW27R3HSf3Kpk3JV1999WC3BdpriLQgw8PD2/L5/DZVVeFWCKxkMtlyxuL7PiYnJzA9fRbM3HAukehkplMZmCBgcnIShtGe/kilUtB1/Qt37t0bPyhaRixEThmKpdIIEH7JnhfGfwvdSzOUy2UYhon+/n7olWuy2WzT9p7nwXEceL6PwA8JMqpTxML8PJi51lcUUqkUFFmWJEl6FMAN3RZqL2GRP9iyZcu+2ZmZ3dlstoH+7u/vh6ZpMbtlGEYZpmlCURSsWBH2ZVpW+M+0YNs2bMeF63oIgtDiEFGDCyMipHUdrusiCAIoLQLXubk5ENHl11xzzWOvvfba2W4LtlfQYEG2bd8uzs7MPJDNZmFZVkNDPbZynEPoHmag6VqdeyIIQkwOpc5VWaaJIAiaWiNZUWDZNimK8hiAX+2aRHsMDcGBY9sPA1Bt225sJAhIqmqsDpkZjuOgWCjCKBuwbRvjY2P1+ZX4g1sQ87iOg3w+H9m2qsCapm3ad9dde7om0R5D7Q0Mb9t2yfz8/G1RsxBVVdsyp77nwygbKBVLsK1Qwap9WZa1JCWRFrCqzAzPdTE7O7uobf00WlXVB7st2F5BTUFMw3g8qaqJalBaj2axBzPDtuzQWhgGfN9vOC/J5xjRpSiJ0mSKG/g+pqenG9sqSk0hFUXJfv7uu/+py7LtCQgAsHV4eEcQBJ+wF8QdVSycQXiuh3KpjFKxFFXHUcPCvEonSkJELYNSMOPs2cZYtJ4z0TTtzjv37l3ZJbn2DAQAsCzrEcuymvoQVdMQBAEs00KxUIRZCRjbIcotWZaFyYmJRVzJIjC3dWsEYGpqqvZ3PT0viqIoy/IPuyPW3oEwNDR0j21Z6+oPJhIJyLIMWZYhimLNYriuG7vjeveyEIZhYGJ8vKWSxM0WC0SYeucdMPOi5KGu65/au2/fx7si2R6BYNv23yVEsZZBtW0b5XIZhUIBhUIBRIRTp0523LEkSi3Pt1OSRAd1JoIgYGpqCnoqtYhHkWX50W4ItlcgFoullOe1tgyu62J8fAyXXnop2nmGKoQY9HpVSS6JyPG0SvlHISEIyM3OwnNdFApFlI1ajHTxeyvS3oIoigk0UxAiqrkVy7Jw5swZrF170aJ2a9aswcDAQMN1qnquJnXyzBnMzc1F3qNeSQYGBmozpoyuI7EgyJ2dmcFCjsb3feTn5pDL5ZDL55HP5bFq1SpcdNFFwADguq7IzL8NoAzg/4iofeq5Dsx8OQCHiEbbtPt1AKNENBez3yEiOtrBGEpE9E6T80kAVxHRz2L2txnA20RUaNNuu2jbzWchmqY1TF1LpRJmZ2ewalVjXcf11+/A5s2bMToaFnglEgKEOj7lhRdeaKogQEVJJiZw6+7dICJYphlZ9Hzs2DHYtg3TsmoKMV/J1VQeCMyM4eGt2LFjB06cOIl8PicCuB1ACsBmZv5fAJ9pJuwI7AXwJ8z8G0Q030SQHwNwFMDvA3gxZr8/ADDYwRh+DuCRJufXAngYwLUx+3sYwElm3klEkT6Bmf8awEOiaZrQNDVyVpJIJBZxG/l8HqIoLaK8Dx06hCeffAoAoKc6rVUFjHIZlmXhyNGjODs1hTX955SQmVEoFJDL55HL5WA0qRWpJvsA4OjRoxgZ2Q9BEKybb7759ko/BODeiqD/oIPhWQD+DcBNEYLUKv190JZnXA7gLgD/HPFMHwXweQAzIhDyB1YEBxJFmgHA9PRZSJLUlEDrVDmq8D0PM9PToMq9c/l86Dby+aZjiTPeKoiImfleAHlmFokobqniNwHcxsx3ENFDEee+D+DXlvTQ3cNnAfwHM79MRP9dPcjMCoDvVs5/XwSwyEoAYf1HK65jcnIC69dvWFTQI0qtlz60Q7lUwsTkZOSY2iHmNFwAECBccxMXPoA/B3CUmY8Q0c8rwvwzAB8B8DkA/35eD/7eYwrAXwL4ATNvrnOf/wjgR0T0CjOH2dxy2YC8gLeQZbklSwoAo6OnsXHjZQ3HOp19MDOCIIDnefCDAOlMBsnZXCVBeC4O8TyvaaKu2k878o2ZBQBfA/AUEXWkgUQ0ycx/BeBRZv44gAyABwB8ioiCtsTf+xBEdJCZHwXwLwB2M/PvAhgC8FvVNiIABEEAWVHg1M0Q4uZMTp06CWbghhv+GENDQ4tKDi3Lwte/8Y3a31WF8H0/8oXu3r0bZqWKjIhq7mpqagr/+u3mpacLLc7VV1+NPXuAYrGoPPnkE/8AYDWA30QY7N2xRIE+y8z/CeBbANYA+FsimrxQL6xL+AqAF5j5HoRW8o/qP56aP6C6AndRFGP5fCB84XNzeRw6dAgHDhyAnmrM23AQ1BQijtI99OCDeOutt2t/y7IMJdm+wt1zG8dbLpcxNXUWpmUygFMAdgH4GhHtP0+BfhnASwCOEdHT59lXXBgAWtVbEID4NHf9hUQ+M+9B+OHsJaJT9edrCmKaZq2QR1XVjmh1ZsbY2Chy+RwM00BQpxSdolpdVoXjOCEjqrQuXl443hMnTuDgwYMQBMEhokeY+RUAP2Hmo0TUOTV8TqAeM/8pgOJS+1gCRgF8tMX5jQDiTtujnmmcmT9GRIsWotWmG47jIJHoPMAURbGWs8nncrAsC67rLkk5gOiA2bZtuE5zhY3j/4noFwD+BsBjzByv+ql5X9NEZJ1PHx3ixwBuYeZmxb03AXjuPJ8pcpViw3xUkkQQUUv3IggCdF1HJpMJi4UVpRYgCoKAUrEY64VFDrLFOcuyFrmRKnwvnjIS0RMAfoIwhvjAgIhOI+RhnmDm1fXnmPkWhEHlw+/GvRtMhuO4YWq/7ismIiSTSYiSBFQCTABNLUQQBCgVi0il0x2v32Vm7Nu3N5KTAYBnnvkRXn/9dSTExkC43WxrAe4B8FwTTuP9jC8D+AKAnzHzGwByAK4EMAHg94joXdkeg9auvajhc1+9uh9CIgG5Ml2NE1im02lIktTQVhCEjpVE1/SW0+RSqQTTNKFqjQu0ioXGcEDTNBARyuUyBEEwn3rqyQZGj5l1AH1ENNFuTMy8EmEuptSmXT/CfEks18PM64hoPLZwzl0nIiTl0ghzSx3HHsx8MYCz7YhCZl4nAmFQKskSAj8ACQQxkeioNLBYLCKVSjVUkC3FkrTiOephGmatUj5qnO0WWxFRGWHyri3iJveIaCa2wML2HStH5ToPwP8s5dq6PmJNzYloXEinU5brOpVciAnP9WA7TsdxRFSxc1VJLjSJxMwwDRMc8OJ4iUK3yMxwPRemZSzpRSwjhLhixYqvmKb5QPWA4zjwAx+s6bFW2LdDXEtSn2iL269pmmBm+L4H13VhO3aDwgiCECiK8uluCLZXQABw5ZVXnpmfn19bPSgrMpgZmqpBSSoNJFoUZFluu+quXUzi2PEDTRIIvufBtm0YZrQ7ISKIovj84UOHd3RJtj0BAQDSmcxt9S9OlkPLYZhGrG0Y4uRfWrmbODFKuCwTcBwbRrkcFg61uI4ZtizLN3dBpj0FAQCOHjlycOXKla/WDtYtjbQsC2WjdTwXbwOZ5krSKiAmIgQcwDDKi9beMAdNr1EU+VsHnjvQUfXYMhajRpRpur5LkqQAANwFhJRt2yiWmjPLnUxlgyBAuVRqUIqFRFfNWrgODKOMZut1orgYQRDg+/78iy+8eHc3BdsrqCnIkZ/+dGLlypXfBcKF0gvhui4KxcUljKIkdUyI+b4Po1yuKUn1/3D2EcAwjNBatEkYRuWLLMuCruuf67ZgewUNVLuSTH5W0zSTmSN39vE8D/OFxrLMODsARaFeScLi6NBahCxqvGlxlKtKJpNvP3/w+eVtvC8QGoKHsbGx4COXX14oFot/qKpqZE6GmWE7NtTKav84C7urmV3P82A7NkzLRLlcxtz8PGzLgigmOk/uUaMFISLYts3pdOZ3Tp44sbw/yAVC5Ju98qqrRj3XvdRxm089BUFAX7avVrxcS/EHPnzfh+u6cF0XTgvSLZVK1ZRQ13Xomh6bwWVwbYZVpdWz2ex/HT50eHmHoQuIyPx+Op3e886ZM4dJaG4aZFmG53uYOjsVu7io4cai2GA1wq2rDKzoW4FEItGWfa2/1rZtSJLkyrJ8S7cF2muInJ+Oj4+PDg4OXh/4wfr6L1oURei6jkQlV+N53pI2hgHChFrUtaZlwnEcqJraMhSxnbA8MggCOI6DbLbv688ffP7H3RZor6Gphdg6PLymMD8/ZpiGXM2OdphWbwpVVWPlZzRNQ0pPRSfkTKPmWlRVzR09cnRV2w6X0TGaMlxjY2PlDYODCSIadl03sdQKsYUgIkiSFEtBXNdF2ShDSSpICHVDpcosyDCgKIqp66mbTp48eaLbwuxFtCUwtg4P91uW9bjj2Ntc1z3vHyCqD0w7gSiKWNG3ola9ViqXPFVVRyRJ+syB5w4s79X+LiH2Cx/asmVbuVz+HgfBBtdbUgE1JEmq1L0uPf2v6zorinJMEBI3HjxwYPnXHt5ldGwRrvvkJ++an5u7XxRFNeCgoyB1KdZDIKFKn0MQhLO6rv/FSy+9tPx7Me8RluQytg4Py7ZlPZLL5W5JJpMCCdSW6IobmAIEUUwg8IOwUNnzoCiKk81mv/rKK68s/+LUe4zziim2bt26sVwuP57L5a6tli1GWYiw8Fltkn2tKETAsCtLJqpIJBLc19f3tKIotx46dGj5N+u6gAvyq5dDQ0M3zM/Pf6dYLK5SFOXcwqtK76lUumGTGjEh1jbcXbghTBXZbPYtTdN2Hj58+IO2rUJP4YIoSBWfuO66+3K53Jdsy5JEUazsGQYosgJGuFNysyUNVWiaVkin03e8/PLLywm39wH+H7MYfZUWrlPrAAAAAElFTkSuQmCC" />
-                        </svg>
-                    </a>
+        <footer>
+            <nav class="navbar d-flex flex-row justify-content-between align-items-center m-0 p-0">
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="136" height="57" viewBox="0 0 136 57">
+                        <image id="logo" width="136" height="57" xlink:href="data:img/png;base64,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" />
+                    </svg>
+                </a>
 
-                    <div class="d-flex flex-row">
-                        <ul class="navbar-nav d-flex flex-row align-items-baseline flex-wrap m-0 p-0">
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="WhywWeDo" asp-action="Index">Why we do?</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="WhatWeDo" asp-action="Index">What we do?</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Contacts" asp-action="Index">Contacts</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="HowWeDo" asp-action="Index">How we do?</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Careers" asp-action="Index">Careers</a>
-                            </li>
-                        </ul>
+                <div class="d-flex flex-row">
+                    <ul class="navbar-nav d-flex flex-row align-items-baseline flex-wrap m-0 p-0">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="WhywWeDo" asp-action="Index">Why we do?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="WhatWeDo" asp-action="Index">What we do?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Contacts" asp-action="Index">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="HowWeDo" asp-action="Index">How we do?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Careers" asp-action="Index">Careers</a>
+                        </li>
+                    </ul>
 
-                        <div class="footer-but">
-                            <div class="nav-item button-bg-fill">
-                                <a class="nav-link" asp-area="" asp-controller="facebook" asp-action="Index">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
-                                        <metadata>
-                                            <?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
-                                            <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
-                                                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-                                                    <rdf:Description rdf:about="" />
-                                                </rdf:RDF>
-                                            </x:xmpmeta>
-                                            <?xpacket end="w"?>
-                                        </metadata>
-                                        <image id="Фигура_19" data-name="Фигура 19" width="16" height="16" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAz1BMVEUAg/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8dkv9Oqv8vmv8BhP8Wjv/b7v/5/P9MqP8xm/+q1v8nlv8RjP/S6f/y+f/////4/P+v2P/u9/8Mif+83/97v/+WzP/1+v85nv8Ehf9TrP8Vjv+e0P9DpP8AAADh7zgTAAAAJnRSTlMAOZ7X9BOurxXaAb9Tsu363eGqo0I+pqUKvrkJBoEE/cfEbxa3LB4EOV8AAAABYktHRET5tJjBAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4ggdDjMKG3t1jgAAAJ9JREFUGNNVj9cSglAMBY8UBQFRVOxdo2AvqNjL//+T94IK7EOSncmkAIyUIEqSKKQQIqfpS0bmrqj0R1WArEYxtCx0SqDDCPJ4wqPjkoEcr6az+YKWqzVRDibzzXbn7Q9Hh5Um8kT+6exfvOuN9xZg0f3xJHJf72BYEaXkljJgx73CLq3WIq83+O3Nn0qtdvgddWyr27P6g++3GI4Q8QFp2BzfldwUngAAAABJRU5ErkJggg==" />
-                                    </svg>
-                                    Write on Facebook
-                                </a>
-                            </div>
-
-                            <div class="copyrights">
-                                ©
-                                <script type="text/javascript">document.write(new Date().getFullYear());</script> Fermium Inc. All Rights Reserved
-                            </div>
+                    <div class="footer-but">
+                        <div class="nav-item button-bg-fill">
+                            <a class="nav-link" asp-area="" asp-controller="facebook" asp-action="Index">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+                                    <metadata>
+                                        <?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+                                        <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
+                                            <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                                                <rdf:Description rdf:about="" />
+                                            </rdf:RDF>
+                                        </x:xmpmeta>
+                                        <?xpacket end="w"?>
+                                    </metadata>
+                                    <image id="Фигура_19" data-name="Фигура 19" width="16" height="16" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAz1BMVEUAg/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8Ag/8dkv9Oqv8vmv8BhP8Wjv/b7v/5/P9MqP8xm/+q1v8nlv8RjP/S6f/y+f/////4/P+v2P/u9/8Mif+83/97v/+WzP/1+v85nv8Ehf9TrP8Vjv+e0P9DpP8AAADh7zgTAAAAJnRSTlMAOZ7X9BOurxXaAb9Tsu363eGqo0I+pqUKvrkJBoEE/cfEbxa3LB4EOV8AAAABYktHRET5tJjBAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4ggdDjMKG3t1jgAAAJ9JREFUGNNVj9cSglAMBY8UBQFRVOxdo2AvqNjL//+T94IK7EOSncmkAIyUIEqSKKQQIqfpS0bmrqj0R1WArEYxtCx0SqDDCPJ4wqPjkoEcr6az+YKWqzVRDibzzXbn7Q9Hh5Um8kT+6exfvOuN9xZg0f3xJHJf72BYEaXkljJgx73CLq3WIq83+O3Nn0qtdvgddWyr27P6g++3GI4Q8QFp2BzfldwUngAAAABJRU5ErkJggg==" />
+                                </svg>
+                                Write on Facebook
+                            </a>
                         </div>
 
+                        <div class="copyrights">
+                            ©
+                            <script type="text/javascript">document.write(new Date().getFullYear());</script> Fermium Inc. All Rights Reserved
+                        </div>
                     </div>
-                </nav>
-            </footer>
-        </div>
 
-        <environment include="Development">
-            <script src="~/lib/jquery/dist/jquery.js"></script>
-            <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-            <script src="~/lib/bootstrap/js/bootstrap.js"></script>
-            <script src="~/js/site.js" asp-append-version="true"></script>
-        </environment>
-        <environment exclude="Development">
-            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                    asp-fallback-test="window.jQuery"
-                    crossorigin="anonymous"
-                    integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-            </script>
-            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                    asp-fallback-src="~/lib/bootstrap/js/bootstrap.min.js"
-                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                    crossorigin="anonymous"
-                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-            </script>
-            <script src="~/js/site.min.js" asp-append-version="true"></script>
-        </environment>
+                </div>
+            </nav>
+        </footer>
+    </div>
 
-        @RenderSection("Scripts", required: false)
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
