@@ -1,8 +1,12 @@
 ﻿* {
   font-family: "OpenSans";
   font-size: 22px;
+  line-height: 38px;
   font-weight: normal;
   font-style: normal; }
+
+p {
+  margin: 0; }
 
 body {
   background: black; }
@@ -64,29 +68,69 @@ footer .footer-but .copyrights {
   font-size: 11px;
   text-align: center; }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-  height: 500px;
-  padding-left: 15px;
-  padding-right: 15px; }
+.title {
+  margin-top: 130px;
+  width: 540px; }
+  .title-h2 {
+    color: #343434;
+    font-family: "GothamPro";
+    font-weight: 600;
+    font-style: normal;
+    font-size: 36px;
+    margin-bottom: 40px; }
+  .title-description {
+    color: #767676; }
 
 /* Carousel */
-.carousel-caption p {
-  font-size: 20px;
-  line-height: 1.4; }
+.carousel-item {
+  height: 100vh;
+  width: 100%;
+  position: relative; }
+  .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%; }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-  width: 100%; }
-
-/* QR code generator */
-#qrCode {
-  margin: 15px; }
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-  /* Hide captions */
-  .carousel-caption {
-    display: none; } }
+/* Servises */
+.services {
+  background: url(../images/office.jpg) no-repeat;
+  background-size: contain;
+  height: 980px;
+  background-position: left center; }
+  .services-text {
+    margin-left: 42%;
+    padding-left: 40px;
+    width: 58%;
+    background: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative; }
+    .services-text .title {
+      margin-left: auto;
+      margin-right: 130px; }
+      .services-text .title::after {
+        content: "";
+        margin-top: 70px;
+        display: block;
+        border-bottom: 1px solid #e0e0e0;
+        width: 100%; }
+  .services-cont {
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: 130px;
+    width: 540px; }
+    .services-cont .cont {
+      width: 230px;
+      margin-bottom: 70px; }
+      .services-cont .cont-title {
+        margin-top: 12px;
+        margin-bottom: 13px;
+        font-size: 18px;
+        font-weight: 600;
+        font-style: normal;
+        line-height: 26px;
+        color: #343434; }
+      .services-cont .cont p {
+        font-size: 15px;
+        line-height: 26px;
+        color: #767676; }
 
