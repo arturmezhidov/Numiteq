@@ -6,6 +6,8 @@
 
 <h2>@ViewData["Title"]</h2>
 
+<a asp-action="Add" class="">Add</a>
+
 <table class="table">
     <thead class="thead-dark">
     <tr>
@@ -22,7 +24,10 @@
             <th scope="row">@i</th>
             <td>@number.Value</td>
             <td>@number.Label</td>
-            <td><a asp-action="Edit" asp-route-id="@number.Id">Edit</a></td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@number.Id">Edit</a>
+                | <a asp-action="Delete" asp-route-id="@number.Id">Delete</a>
+            </td>
         </tr>
     }
     </tbody>

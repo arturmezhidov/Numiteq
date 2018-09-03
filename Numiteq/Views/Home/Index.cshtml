@@ -110,31 +110,5 @@
     </div>
 </div>
 
-<div class="container-fluid d-flex justify-content-center numbers">
-    <div class="d-flex flex-column">
-        <div class="title">
-            <div class="title-h2">Fermium in numbers</div>
-            <div class="title-description">Our employees are empowered to make a difference through our social responsibility initiatives.</div>
-        </div>
-        <div class="numbers-row d-flex flex-row flex-wrap">
-            <div class="num-element">
-                <div>586</div>
-                <span>Projects per year</span>
-            </div>
-            <div class="num-element">
-                <div>91</div>
-                <span>Cups of coffee</span>
-            </div>
-            <div class="num-element">
-                <div>127</div>
-                <span>Dollars per day</span>
-            </div>
-            <div class="num-element">
-                <div>64</div>
-                <span>Beer cups</span>
-            </div>
-        </div>
-    </div>
-
-</div>
+@Html.Partial("_NumberSection", Model.Numbers)
 

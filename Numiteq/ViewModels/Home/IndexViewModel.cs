@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace Numiteq.ViewModels.Home
+﻿namespace Numiteq.ViewModels.Home
 {
     public class IndexViewModel
     {
-        public IEnumerable<NumberViewModel> Numbers { get; set; }
+        public NumberSectionViewModel Numbers { get; set; }
     }
 }

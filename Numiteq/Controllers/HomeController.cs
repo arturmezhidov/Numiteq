@@ -24,7 +24,7 @@ namespace Numiteq.Controllers
         {
             IndexViewModel vm = new IndexViewModel
             {
-                Numbers = numberService.GetAll().Select(ToViewModel)
+                Numbers = GetNumberSection()
             };
             return View(vm);
         }
@@ -32,6 +32,15 @@ namespace Numiteq.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private NumberSectionViewModel GetNumberSection()
+        {
+            return new NumberSectionViewModel
+            {
+                NumberSettings = SettingService.GetSettings<NumberSettingsViewModel>(),
+                Numbers = numberService.GetAll().Select(ToViewModel)
+            };
         }
 
         private NumberViewModel ToViewModel(Number number)
