@@ -45,12 +45,7 @@
 </div>
 
 <!-- Description -->
-<div class="container-fluid description">
-    <div class="container">
-        <div class="title">digital solutions and development</div>
-        <p>Our teams of technologists, strategists and designers deliver powerful digital experiences. We specialize in 11 industries in 25 countries, delivering innovative solutions to our customers’ most challenging problems. The numbers speak for themselves.</p>
-    </div>
-</div>
+@Html.Partial("_HomeDescriptionSection", Model.HomeDescription)
 
 <!-- Services -->
 <div class="container-fluid d-flex services">
@@ -110,5 +105,6 @@
     </div>
 </div>
 
+<!-- Numbers -->
 @Html.Partial("_NumberSection", Model.Numbers)
 

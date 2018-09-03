@@ -24,7 +24,8 @@ namespace Numiteq.Controllers
         {
             IndexViewModel vm = new IndexViewModel
             {
-                Numbers = GetNumberSection()
+                Numbers = GetNumberSection(),
+                HomeDescription = GetHomeDescriptionSection()
             };
             return View(vm);
         }
@@ -32,6 +33,14 @@ namespace Numiteq.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private HomeDescriptionSectionViewModel GetHomeDescriptionSection()
+        {
+            return new HomeDescriptionSectionViewModel
+            {
+                HomeDescription = SettingService.GetSettings<HomeDescriptionViewModel>()
+            };
         }
 
         private NumberSectionViewModel GetNumberSection()
