@@ -1,7 +1,29 @@
-﻿
+﻿@model Numiteq.Areas.Admin.ViewModels.Number.IndexViewModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Numbers";
+    int i = 0;
 }
 
-<h2>Index</h2>
+<h2>@ViewData["Title"]</h2>
 
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Value</th>
+        <th scope="col">Label</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var number in Model.Numbers)
+    {
+        <tr>
+            <th scope="row">@i</th>
+            <td>@number.Value</td>
+            <td>@number.Label</td>
+            <td><a asp-action="Edit" asp-route-id="@number.Id">Edit</a></td>
+        </tr>
+    }
+    </tbody>
+</table>

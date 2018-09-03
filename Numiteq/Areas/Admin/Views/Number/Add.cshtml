@@ -1,0 +1,30 @@
+﻿@model Numiteq.Areas.Admin.ViewModels.Number.AddNumberViewModel
+@{
+    ViewData["Title"] = "Add number";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+
+            <h4>@ViewData["Title"]</h4>
+            <div class="form-group">
+                <label asp-for="Value"></label>
+                <input asp-for="Value" class="form-control" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Label"></label>
+                <input asp-for="Label" class="form-control" />
+                <span asp-validation-for="Label" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-default">Save</button>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

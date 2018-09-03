@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Numiteq.Areas.Admin.ViewModels.Settings;
+using Numiteq.Areas.Admin.ViewModels.Layout;
 using Numiteq.BusinessLogic.BusinessContracts;
 using Numiteq.Controllers;
 

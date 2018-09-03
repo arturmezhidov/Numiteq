@@ -15,9 +15,16 @@ namespace Numiteq.Controllers
         protected IServiceProvider ServiceProvider { get; }
         protected ISettingService SettingService => settingService ?? (settingService = ServiceProvider.GetRequiredService<ISettingService>());
 
+        protected virtual string IndexActionName => "Index";
+
         protected BaseController(IServiceProvider serviceProvider)
         {
             ServiceProvider = serviceProvider;
+        }
+
+        protected IActionResult RedirectToIndex(string error = null)
+        {
+            return RedirectToAction(IndexActionName);
         }
     }
 }

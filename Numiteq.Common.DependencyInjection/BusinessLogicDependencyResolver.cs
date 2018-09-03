@@ -10,6 +10,7 @@ namespace Numiteq.Common.DependencyInjection
         {
             services.AddScoped<IDatabaseService, DatabaseService>();
             services.AddScoped<ISettingService, SettingService>();
+            services.AddScoped<INumberService, NumberService>();
 
             return services;
         }

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Numiteq.Common.Settings;
 
-namespace Numiteq.Areas.Admin.ViewModels.Settings
+namespace Numiteq.Areas.Admin.ViewModels.Layout
 {
     [SettingsType(SettingsKeys.Header)]
     public class HeaderViewModel
