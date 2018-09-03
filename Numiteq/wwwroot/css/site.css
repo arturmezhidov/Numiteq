@@ -10,7 +10,7 @@ body {
 p {
   margin: 0; }
 
-.container {
+.container, .container-fluid {
   padding: 0; }
 
 a:link,
@@ -58,21 +58,21 @@ a:hover {
       line-height: 10px;
       text-transform: uppercase; }
 
-footer .navbar-nav {
-  width: 380px; }
-
-footer .footer-but svg {
-  margin-bottom: -4px;
-  margin-right: 12px; }
-
-footer .footer-but .copyrights {
-  margin-top: 15px;
-  font-size: 11px;
-  text-align: center; }
+footer {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  footer .navbar-nav {
+    width: 380px; }
+  footer .footer-but svg {
+    margin-bottom: -4px;
+    margin-right: 12px; }
+  footer .footer-but .copyrights {
+    margin-top: 15px;
+    font-size: 11px;
+    text-align: center; }
 
 .title {
-  margin-top: 130px;
-  width: 540px; }
+  margin-top: 130px; }
   .title-h2 {
     margin-bottom: 40px;
     color: #343434;
@@ -119,7 +119,7 @@ footer .footer-but .copyrights {
     margin-left: auto;
     padding-left: 40px;
     width: 58%;
-    background: #f8f8f8;
+    background: #ffffff;
     border-bottom: 1px solid #e0e0e0;
     position: relative; }
     .services-text .title {
@@ -135,7 +135,7 @@ footer .footer-but .copyrights {
     margin-top: 60px;
     margin-left: auto;
     margin-right: auto;
-    width: 540px; }
+    max-width: 540px; }
     .services-cont .cont {
       width: 240px;
       margin-bottom: 70px; }
@@ -151,4 +151,44 @@ footer .footer-but .copyrights {
         font-size: 15px;
         line-height: 26px;
         color: #767676; }
+
+/* Numbers */
+.numbers {
+  background: #ffffff;
+  padding-bottom: 147px; }
+  .numbers .title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+    text-align: center; }
+  .numbers-row .num-element {
+    text-align: center;
+    margin-right: 176px; }
+    .numbers-row .num-element div {
+      position: relative;
+      font-family: "GothamPro";
+      font-weight: 100;
+      font-style: normal;
+      font-size: 96px;
+      line-height: 90px;
+      color: #343434; }
+      .numbers-row .num-element div::after {
+        content: "";
+        position: absolute;
+        top: 21px;
+        right: -88px;
+        display: block;
+        border-right: 1px solid #e0e0e0;
+        height: 48px; }
+    .numbers-row .num-element:last-child {
+      margin-right: 0; }
+      .numbers-row .num-element:last-child div::after {
+        content: none; }
+    .numbers-row .num-element span {
+      font-family: "OpenSans";
+      font-weight: normal;
+      font-style: normal;
+      font-size: 15px;
+      line-height: 26px;
+      color: #767676; }
 

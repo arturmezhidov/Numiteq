@@ -1,9 +1,8 @@
-﻿$bg-white: #f8f8f8;
+﻿$bg-white: #ffffff;
 $color-white-trans: rgba(255,255,255, .5);
 $line-separ: #e0e0e0;
 $title: #343434;
 $title-descr: #767676;
-$text-p: #ffffff;
 $background-text: #232323;
 
 * {
@@ -21,7 +20,7 @@ p {
     margin: 0;
 }
 
-.container {
+.container, .container-fluid {
     padding: 0;
 }
 
@@ -93,6 +92,9 @@ a:hover {
 }
 
 footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
     .navbar-nav {
         width: 380px;
     }
@@ -113,7 +115,7 @@ footer {
 
 .title {
     margin-top: 130px;
-    width: 540px;
+    
 
     &-h2 {
         margin-bottom: 40px;
@@ -145,7 +147,7 @@ footer {
 .description {
     margin-top: 130px;
     margin-bottom: 140px;
-    color: $text-p;
+    color: $bg-white;
 
     .title {
         margin-top: 0;
@@ -169,7 +171,6 @@ footer {
 
     &-text {
         margin-left: auto;
-        
         padding-left: 40px;
         width: 58%;
         background: $bg-white;
@@ -194,7 +195,7 @@ footer {
         margin-top: 60px;
         margin-left: auto;
         margin-right: auto;
-        width: 540px;
+        max-width: 540px;
 
         .cont {
             width: 240px;
@@ -219,6 +220,58 @@ footer {
     }
 }
 
+/* Numbers */
+.numbers {
+    background: $bg-white;
+    padding-bottom: 147px;
 
+    .title {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 70px;
+        text-align: center;
+    }
 
+    &-row .num-element {
+        text-align: center;
+        margin-right: 176px;
+
+        div {
+            position: relative;
+            font-family: "GothamPro";
+            font-weight: 100;
+            font-style: normal;
+            font-size: 96px;
+            line-height: 90px;
+            color: $title;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 21px;
+                right: -88px;
+                display: block;
+                border-right: 1px solid $line-separ;
+                height: 48px;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+
+            div::after {
+                content: none;
+            }
+        }
+
+        span {
+            font-family: "OpenSans";
+            font-weight: normal;
+            font-style: normal;
+            font-size: 15px;
+            line-height: 26px;
+            color: $title-descr;
+        }
+    }
+}
 
