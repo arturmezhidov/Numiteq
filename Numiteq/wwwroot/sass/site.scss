@@ -3,20 +3,26 @@ $color-white-trans: rgba(255,255,255, .5);
 $line-separ: #e0e0e0;
 $title: #343434;
 $title-descr: #767676;
+$text-p: #ffffff;
+$background-text: #232323;
 
 * {
     font-family: "OpenSans";
     font-size: 22px;
-    line-height: 38px;
     font-weight: normal;
     font-style: normal;
 }
+
+body {
+    background: $background-text;
+}
+
 p {
     margin: 0;
 }
 
-body {
-    background: black;
+.container {
+    padding: 0;
 }
 
 a:link,
@@ -110,12 +116,12 @@ footer {
     width: 540px;
 
     &-h2 {
+        margin-bottom: 40px;
         color: $title;
         font-family: "GothamPro";
         font-weight: 600;
         font-style: normal;
         font-size: 36px;
-        margin-bottom: 40px;
     }
 
     &-description {
@@ -135,6 +141,25 @@ footer {
     }
 }
 
+/* Description */
+.description {
+    margin-top: 130px;
+    margin-bottom: 140px;
+    color: $text-p;
+
+    .title {
+        margin-top: 0;
+        font-family: "GothamPro";
+        font-weight: 100;
+        font-style: normal;
+        font-size: 13px;
+        line-height: 34px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: rgba(255,255,255, .7);
+    }
+}
+
 /* Servises */
 .services {
     background: url(../images/office.jpg) no-repeat;
@@ -143,7 +168,8 @@ footer {
     background-position: left center;
 
     &-text {
-        margin-left: 42%;
+        margin-left: auto;
+        
         padding-left: 40px;
         width: 58%;
         background: $bg-white;
@@ -152,7 +178,7 @@ footer {
 
         .title {
             margin-left: auto;
-            margin-right: 130px;
+            margin-right: auto;
 
             &::after {
                 content: "";
@@ -167,12 +193,13 @@ footer {
     &-cont {
         margin-top: 60px;
         margin-left: auto;
-        margin-right: 130px;
+        margin-right: auto;
         width: 540px;
 
         .cont {
-            width: 230px;
+            width: 240px;
             margin-bottom: 70px;
+
             &-title {
                 margin-top: 12px;
                 margin-bottom: 13px;
