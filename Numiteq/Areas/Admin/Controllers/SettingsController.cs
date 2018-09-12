@@ -33,5 +33,19 @@ namespace Numiteq.Areas.Admin.Controllers
             SettingService.SaveSettings(vm);
             return RedirectToIndex();
         }
+
+        [HttpGet]
+        public IActionResult HomeWwd()
+        {
+            HomeWwdViewModel vm = SettingService.GetSettings<HomeWwdViewModel>();
+            return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult HomeWwd(HomeWwdViewModel vm)
+        {
+            SettingService.SaveSettings(vm);
+            return RedirectToIndex();
+        }
     }
 }
