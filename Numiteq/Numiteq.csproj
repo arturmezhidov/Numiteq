@@ -31,4 +31,8 @@
     <ProjectReference Include="..\Numiteq.Common.DependencyInjection\Numiteq.Common.DependencyInjection.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+
 </Project>

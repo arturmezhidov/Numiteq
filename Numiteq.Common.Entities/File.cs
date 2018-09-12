@@ -8,6 +8,6 @@
 
         public string ContentType { get; set; }
 
-        public int ContentLength { get; set; }
+        public long ContentLength { get; set; }
     }
 }

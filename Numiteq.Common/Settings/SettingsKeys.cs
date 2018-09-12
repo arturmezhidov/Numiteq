@@ -6,5 +6,6 @@
         public const string Footer = "Footer";
         public const string Number = "Number";
         public const string HomeDescription = "HomeDescription";
+        public const string MainService = "MainService";
     }
 }
