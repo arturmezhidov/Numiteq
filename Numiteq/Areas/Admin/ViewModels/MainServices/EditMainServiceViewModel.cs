@@ -15,9 +15,9 @@ namespace Numiteq.Areas.Admin.ViewModels.MainServices
         [Display(Name = "Description")]
         public string Description { get; set; }
 
-        [Display(Name = "Select new image")]
-        public IFormFile Image { get; set; }
+        [Display(Name = "Select new icon")]
+        public IFormFile NewIcon { get; set; }
 
-        public string FileLink { get; set; }
+        public string Icon { get; set; }
     }
 }

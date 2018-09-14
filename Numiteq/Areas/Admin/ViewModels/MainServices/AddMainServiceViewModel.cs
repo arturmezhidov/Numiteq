@@ -14,7 +14,7 @@ namespace Numiteq.Areas.Admin.ViewModels.MainServices
         public string Description { get; set; }
 
         [Required]
-        [Display(Name = "Image")]
-        public IFormFile Image { get; set; }
+        [Display(Name = "Icon")]
+        public IFormFile Icon { get; set; }
     }
 }

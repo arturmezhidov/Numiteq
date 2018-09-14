@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -14,15 +15,12 @@ namespace Numiteq.Areas.Admin.Controllers
     [Area("Admin")]
     public class MainServiceController : BaseController
     {
-        private readonly IFileService fileService;
         private readonly IMainServicesService mainServicesService;
 
         public MainServiceController(
             IServiceProvider serviceProvider,
-            IFileService fileService,
             IMainServicesService mainServicesService) : base(serviceProvider)
         {
-            this.fileService = fileService;
             this.mainServicesService = mainServicesService;
         }
 
@@ -68,7 +66,7 @@ namespace Numiteq.Areas.Admin.Controllers
             {
                 Title = vm.Title,
                 Description = vm.Description,
-                File = fileService.CreateFile(vm.Image)
+                Icon = GetStringFromFile(vm.Icon)
             });
 
             return RedirectToIndex();
@@ -89,7 +87,7 @@ namespace Numiteq.Areas.Admin.Controllers
                 Id = id,
                 Title = mainService.Title,
                 Description = mainService.Description,
-                FileLink = fileService.GetFileLink(mainService.File)
+                Icon = mainService.Icon
             };
 
             return View(vm);
@@ -103,7 +101,7 @@ namespace Numiteq.Areas.Admin.Controllers
                 return View(vm);
             }
 
-            mainServicesService.Update(vm.Id, vm.Title, vm.Description, vm.Image);
+            mainServicesService.Update(vm.Id, vm.Title, vm.Description, vm.Icon);
 
             return RedirectToIndex();
         }
@@ -122,7 +120,8 @@ namespace Numiteq.Areas.Admin.Controllers
             {
                 Id = mainService.Id,
                 Title = mainService.Title,
-                Description = mainService.Description
+                Description = mainService.Description,
+                Icon = mainService.Icon
             };
         }
     }
