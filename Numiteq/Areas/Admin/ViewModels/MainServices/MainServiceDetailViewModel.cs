@@ -8,6 +8,6 @@
 
         public string Description { get; set; }
 
-        public string FileLink { get; set; }
+        public string Icon { get; set; }
     }
 }

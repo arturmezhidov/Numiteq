@@ -8,8 +8,6 @@
 
         public int SortNumber { get; set; }
 
-        public int FileId { get; set; }
-
-        public File File { get; set; }
+        public string Icon { get; set; }
     }
 }
