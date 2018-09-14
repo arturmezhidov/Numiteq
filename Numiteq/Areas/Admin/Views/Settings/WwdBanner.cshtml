@@ -1,0 +1,41 @@
+﻿@model Numiteq.Areas.Admin.ViewModels.Settings.WwdBannerViewModel
+@{
+    ViewData["Title"] = "What We Do banner settings";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+
+            <h4>@ViewData["Title"]</h4>
+            <div class="form-group">
+                <label asp-for="Header"></label>
+                <input asp-for="Header" class="form-control" />
+                <span asp-validation-for="Header" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text"></label>
+                <textarea asp-for="Text" class="form-control"></textarea>
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ButtonText"></label>
+                <input asp-for="ButtonText" class="form-control" />
+                <span asp-validation-for="ButtonText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ButtonLink"></label>
+                <input asp-for="ButtonLink" class="form-control" />
+                <span asp-validation-for="ButtonLink" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-default">Save</button>
+            <a asp-action="Index" class="btn btn-default">Cancel</a>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

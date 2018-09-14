@@ -47,5 +47,47 @@ namespace Numiteq.Areas.Admin.Controllers
             SettingService.SaveSettings(vm);
             return RedirectToIndex();
         }
+
+        [HttpGet]
+        public IActionResult HomeBanner()
+        {
+            HomeBannerViewModel vm = SettingService.GetSettings<HomeBannerViewModel>();
+            return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult HomeBanner(HomeBannerViewModel vm)
+        {
+            SettingService.SaveSettings(vm);
+            return RedirectToIndex();
+        }
+
+        [HttpGet]
+        public IActionResult WwdBanner()
+        {
+            WwdBannerViewModel vm = SettingService.GetSettings<WwdBannerViewModel>();
+            return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult WwdBanner(WwdBannerViewModel vm)
+        {
+            SettingService.SaveSettings(vm);
+            return RedirectToIndex();
+        }
+
+        [HttpGet]
+        public IActionResult HwdBanner()
+        {
+            HwdBannerViewModel vm = SettingService.GetSettings<HwdBannerViewModel>();
+            return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult HwdBanner(HwdBannerViewModel vm)
+        {
+            SettingService.SaveSettings(vm);
+            return RedirectToIndex();
+        }
     }
 }
