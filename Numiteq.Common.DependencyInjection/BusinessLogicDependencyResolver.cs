@@ -13,6 +13,9 @@ namespace Numiteq.Common.DependencyInjection
             services.AddScoped<ISettingService, SettingService>();
             services.AddScoped<INumberService, NumberService>();
             services.AddScoped<IMainServicesService, MainServicesService>();
+            services.AddScoped<IStepService, StepService>();
+            services.AddScoped<IExpertiseService, ExpertiseService>();
+            services.AddScoped<IServicesService, ServicesService>();
 
             return services;
         }

@@ -12,21 +12,21 @@ namespace Numiteq.BusinessLogic.BusinessComponents
 
         public MainService Update(int id, string title, string desc, string icon)
         {
-            MainService mainService = GetById(id);
+            var item = GetById(id);
 
-            if (mainService == null)
+            if (item == null)
             {
                 return null;
             }
 
-            mainService.Title = title;
-            mainService.Description = desc;
-            mainService.Icon = icon;
+            item.Title = title;
+            item.Description = desc;
+            item.Icon = icon;
 
-            Update(mainService);
+            Update(item);
             Save();
 
-            return mainService;
+            return item;
         }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Numiteq.Areas.Admin.ViewModels.MainServices;
-using Numiteq.BusinessLogic.BusinessComponents;
 using Numiteq.BusinessLogic.BusinessContracts;
 using Numiteq.Common.Entities;
 using Numiteq.Controllers;

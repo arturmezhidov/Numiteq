@@ -1,0 +1,43 @@
+﻿@model Numiteq.Areas.Admin.ViewModels.Expertises.EditExpertiseViewModel
+@{
+    ViewData["Title"] = "Edit expertise";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+
+            <input asp-for="Id" type="hidden" />
+
+            <h4>@ViewData["Title"]</h4>
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewIcon"></label>
+                <input asp-for="NewIcon" type="file" class="form-control" />
+                <span asp-validation-for="NewIcon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Selected image: </label>
+                <div>@Html.Raw(Model.Icon)</div>
+            </div>
+
+
+            <button type="submit" class="btn btn-success">Save</button>
+            <a asp-action="Index" class="btn btn-default">Cancel</a>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

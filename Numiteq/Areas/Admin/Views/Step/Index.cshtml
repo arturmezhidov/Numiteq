@@ -1,7 +1,34 @@
-﻿
+﻿@model Numiteq.Areas.Admin.ViewModels.Steps.IndexViewModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Steps";
+    int i = 0;
 }
 
-<h2>Steps Admin</h2>
+<h2>@ViewData["Title"]</h2>
 
+<a asp-action="Add" class="">Add</a>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var step in Model.Steps)
+        {
+            <tr>
+                <th scope="row">@i</th>
+                <td>@step.Title</td>
+                <td>@Html.Raw(step.Description)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@step.Id">Edit</a>
+                    | <a asp-action="Delete" asp-route-id="@step.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

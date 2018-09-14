@@ -9,5 +9,24 @@ namespace Numiteq.BusinessLogic.BusinessComponents
         public ExpertiseService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
+
+        public Expertise Update(int id, string title, string desc, string icon)
+        {
+            var item = GetById(id);
+
+            if (item == null)
+            {
+                return null;
+            }
+
+            item.Title = title;
+            item.Description = desc;
+            item.Icon = icon;
+
+            Update(item);
+            Save();
+
+            return item;
+        }
     }
 }

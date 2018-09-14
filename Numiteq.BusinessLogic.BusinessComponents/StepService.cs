@@ -9,5 +9,24 @@ namespace Numiteq.BusinessLogic.BusinessComponents
         public StepService(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
+
+        public Step Update(int id, string title, string desc, string icon)
+        {
+            var item = GetById(id);
+
+            if (item == null)
+            {
+                return null;
+            }
+
+            item.Title = title;
+            item.Description = desc;
+            item.Icon = icon;
+
+            Update(item);
+            Save();
+
+            return item;
+        }
     }
 }
