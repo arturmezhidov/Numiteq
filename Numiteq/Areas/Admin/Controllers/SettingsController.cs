@@ -89,5 +89,19 @@ namespace Numiteq.Areas.Admin.Controllers
             SettingService.SaveSettings(vm);
             return RedirectToIndex();
         }
+
+        [HttpGet]
+        public IActionResult Contacts()
+        {
+            ContactsViewModel vm = SettingService.GetSettings<ContactsViewModel>();
+            return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult Contacts(ContactsViewModel vm)
+        {
+            SettingService.SaveSettings(vm);
+            return RedirectToIndex();
+        }
     }
 }

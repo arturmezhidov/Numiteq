@@ -14,5 +14,6 @@
         public const string HomeBanner = "HomeBanner";
         public const string WwdBanner = "WwdBanner";
         public const string HwdBanner = "HwdBanner";
+        public const string Contacts = "Contacts";
     }
 }

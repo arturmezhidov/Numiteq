@@ -18,7 +18,7 @@ namespace Numiteq.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Settings");
         }
 
         [HttpGet]
@@ -32,7 +32,7 @@ namespace Numiteq.Areas.Admin.Controllers
         public IActionResult Header(HeaderViewModel vm)
         {
             SettingService.SaveSettings(vm);
-            return RedirectToAction(nameof(Index));
+            return RedirectToIndex();
         }
 
         [HttpGet]
@@ -46,7 +46,7 @@ namespace Numiteq.Areas.Admin.Controllers
         public IActionResult Footer(FooterViewModel vm)
         {
             SettingService.SaveSettings(vm);
-            return RedirectToAction(nameof(Index));
+            return RedirectToIndex();
         }
     }
 }

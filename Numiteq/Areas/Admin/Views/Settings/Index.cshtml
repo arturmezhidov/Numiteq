@@ -1,4 +1,18 @@
 ﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+@{
+    ViewData["Title"] = "Settings";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <p><a asp-action="Header" asp-controller="Layout">Header settings</a></p>
+    <p><a asp-action="Footer" asp-controller="Layout">Footer settings</a></p>
+    <p><a asp-action="HomeDescription" asp-controller="Settings">Home page description</a></p>
+    <p><a asp-action="HomeWwd" asp-controller="Settings">Home page - What We Do</a></p>
+    <p><a asp-action="HomeBanner" asp-controller="Settings">Home page banner</a></p>
+    <p><a asp-action="WwdBanner" asp-controller="Settings">What We Do page banner</a></p>
+    <p><a asp-action="HwdBanner" asp-controller="Settings">How We Do page banner</a></p>
+    <p><a asp-action="Contacts" asp-controller="Settings">Contacts page settings</a></p>
+</div>
+
