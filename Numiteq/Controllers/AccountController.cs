@@ -65,7 +65,7 @@ namespace Numiteq.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToLocal(returnUrl);
+                    return Redirect(returnUrl ?? "/");
                 }
                 if (result.RequiresTwoFactor)
                 {
@@ -232,7 +232,7 @@ namespace Numiteq.Controllers
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");
-                    return RedirectToLocal(returnUrl);
+                    return Redirect(returnUrl ?? "/");
                 }
                 AddErrors(result);
             }

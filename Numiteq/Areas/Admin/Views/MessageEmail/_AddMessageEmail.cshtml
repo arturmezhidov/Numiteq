@@ -1,0 +1,18 @@
+﻿@model Numiteq.Areas.Admin.ViewModels.MessageEmails.AddMessageEmailViewModel
+
+<div class="row">
+    <div class="col-md-6">
+        <form method="post" asp-action="Add" class="form-inline">
+
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-success">Save</button>
+
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+        </form>
+    </div>
+</div>

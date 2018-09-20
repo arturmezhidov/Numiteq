@@ -20,6 +20,8 @@ namespace Numiteq.DataAccess.SqlDataAccess
 
         public DbSet<Step> Steps { get; set; }
 
+        public DbSet<MessageEmail> MessageEmails { get; set; }
+
         public DbSet<Technology> Technologies { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options)

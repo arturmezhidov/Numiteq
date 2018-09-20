@@ -1,0 +1,45 @@
+﻿@using Numiteq.Areas.Admin.ViewModels.MessageEmails
+
+@model IndexViewModel
+
+@{
+    ViewData["Title"] = "Emails";
+    int i = 0;
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<a asp-area="Admin" asp-controller="Home">Back</a>
+
+<br />
+
+@Html.Partial("_AddMessageEmail", new AddMessageEmailViewModel())
+
+<br />
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Email</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var email in Model.Emails)
+        {
+            <tr>
+                <th scope="row">@i</th>
+                <td>@email.Email</td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@email.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
