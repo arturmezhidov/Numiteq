@@ -3,8 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Numiteq.Common.Entities;
 using Numiteq.DataAccess.DataContracts;
-using Numiteq.DataAccess.Initialization;
+using Numiteq.DataAccess.DataContracts.Initialization;
+using Numiteq.DataAccess.Initialization.Settings;
+using Numiteq.DataAccess.Initialization.Users;
 using Numiteq.DataAccess.SqlDataAccess;
+using Numiteq.DataAccess.SqlDataAccess.Initialization;
 
 namespace Numiteq.Common.DependencyInjection
 {
@@ -18,9 +21,17 @@ namespace Numiteq.Common.DependencyInjection
                 .AddEntityFrameworkStores<DataContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddSingleton<IInitializationDataStorage, InitializationDataStorage>();
-            services.AddSingleton<IDatabaseInitializer, DatabaseInitializer>();
+            // Unit of work
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            // Storages
+            services.AddSingleton<IInitializationDataStorage<Setting>, InitializationSettingStorage>();
+            services.AddSingleton<IInitializationDataStorage<User>, InitializationUserStorage>();
+
+            // Initializers
+            services.AddSingleton<ITableInitializer, SettingsInitializer>();
+            services.AddSingleton<ITableInitializer, UserInitializer>();
+            services.AddSingleton<IDatabaseInitializer, DatabaseInitializer>();
 
             return services;
         }

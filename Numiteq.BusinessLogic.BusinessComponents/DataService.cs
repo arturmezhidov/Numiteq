@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Numiteq.BusinessLogic.BusinessContracts;
 using Numiteq.Common.Entities;
@@ -24,10 +25,30 @@ namespace Numiteq.BusinessLogic.BusinessComponents
                 throw new ArgumentNullException(nameof(entity));
             }
 
-            entity = repository.Create(entity);
+            repository.Add(entity);
+
             unitOfWork.Save();
 
             return entity;
+        }
+
+        public IEnumerable<TEntity> AddRange(IEnumerable<TEntity> entities)
+        {
+            if (entities == null)
+            {
+                throw new ArgumentNullException(nameof(entities));
+            }
+
+            if (!entities.Any())
+            {
+                return entities;
+            }
+
+            repository.AddRange(entities);
+
+            unitOfWork.Save();
+
+            return entities;
         }
 
         public virtual TEntity Update(TEntity entity)

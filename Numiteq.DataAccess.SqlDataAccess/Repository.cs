@@ -2,6 +2,7 @@
 using Numiteq.Common.Entities;
 using Numiteq.DataAccess.DataContracts;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -18,10 +19,16 @@ namespace Numiteq.DataAccess.SqlDataAccess
             Items = context.Set<TEntity>();
         }
 
-        public virtual TEntity Create(TEntity entity)
+        public virtual TEntity Add(TEntity entity)
         {
             Items.Add(entity);
             return entity;
+        }
+
+        public virtual IEnumerable<TEntity> AddRange(IEnumerable<TEntity> entities)
+        {
+            Items.AddRange(entities);
+            return entities;
         }
 
         public virtual TEntity Update(TEntity entity)

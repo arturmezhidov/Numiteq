@@ -1,16 +1,17 @@
-﻿using Numiteq.DataAccess.DataContracts;
+﻿using System.Collections.Generic;
+using Numiteq.DataAccess.DataContracts.Initialization;
 
 namespace Numiteq.DataAccess.SqlDataAccess
 {
     public class DatabaseInitializer : IDatabaseInitializer
     {
         private readonly DataContext context;
-        private readonly IInitializationDataStorage storage;
+        private readonly IEnumerable<ITableInitializer> initializers;
 
-        public DatabaseInitializer(DataContext context, IInitializationDataStorage storage)
+        public DatabaseInitializer(DataContext context, IEnumerable<ITableInitializer> initializers)
         {
             this.context = context;
-            this.storage = storage;
+            this.initializers = initializers;
         }
 
         public void Init()
@@ -19,8 +20,10 @@ namespace Numiteq.DataAccess.SqlDataAccess
 
             if (isCreated)
             {
-                context.Settings.AddRange(storage.GetSettings());
-                context.SaveChanges();
+                foreach (ITableInitializer initializer in initializers)
+                {
+                    initializer.Init();
+                }
             }
         }
     }
