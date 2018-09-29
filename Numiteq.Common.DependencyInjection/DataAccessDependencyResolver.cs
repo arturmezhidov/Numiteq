@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Numiteq.Common.Entities;
 using Numiteq.DataAccess.DataContracts;
 using Numiteq.DataAccess.DataContracts.Initialization;
+using Numiteq.DataAccess.Initialization.Roles;
 using Numiteq.DataAccess.Initialization.Settings;
 using Numiteq.DataAccess.Initialization.Users;
 using Numiteq.DataAccess.SqlDataAccess;
@@ -26,10 +27,12 @@ namespace Numiteq.Common.DependencyInjection
 
             // Storages
             services.AddSingleton<IInitializationDataStorage<Setting>, InitializationSettingStorage>();
+            services.AddSingleton<IInitializationDataStorage<IdentityRole>, InitializationRoleStorage>();
             services.AddSingleton<IInitializationDataStorage<User>, InitializationUserStorage>();
 
             // Initializers
             services.AddSingleton<ITableInitializer, SettingsInitializer>();
+            services.AddSingleton<ITableInitializer, RoleInitializer>();
             services.AddSingleton<ITableInitializer, UserInitializer>();
             services.AddSingleton<IDatabaseInitializer, DatabaseInitializer>();
 
