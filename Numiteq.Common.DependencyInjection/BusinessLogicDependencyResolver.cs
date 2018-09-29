@@ -11,11 +11,12 @@ namespace Numiteq.Common.DependencyInjection
             services.AddScoped<IDatabaseService, DatabaseService>();
             services.AddScoped<IFileService, FileService>();
             services.AddScoped<ISettingService, SettingService>();
+            services.AddScoped<IEmailSender, EmailSender>();
             services.AddScoped<INumberService, NumberService>();
             services.AddScoped<IMainServicesService, MainServicesService>();
             services.AddScoped<IStepService, StepService>();
             services.AddScoped<IExpertiseService, ExpertiseService>();
-            services.AddScoped<IServicesService, ServicesService>(); 
+            services.AddScoped<IServicesService, ServicesService>();
             services.AddScoped<IMessageEmailService, MessageEmailService>();
 
             return services;

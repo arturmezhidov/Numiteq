@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using Numiteq.Services;
+using Numiteq.BusinessLogic.BusinessContracts;
 
 namespace Numiteq.Services
 {

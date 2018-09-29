@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Numiteq.Services;
 using Numiteq.Common.DependencyInjection;
 using Numiteq.BusinessLogic.BusinessContracts;
+using Numiteq.Common.Configuration;
 
 namespace Numiteq
 {
@@ -32,9 +33,6 @@ namespace Numiteq
 
             services.AddBusinessComponents();
 
-            // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
-
             services.AddMvc();
 
             ServiceProvider = services.BuildServiceProvider();
@@ -43,6 +41,8 @@ namespace Numiteq
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            PlatformConfiguration.Init(Configuration);
+
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
