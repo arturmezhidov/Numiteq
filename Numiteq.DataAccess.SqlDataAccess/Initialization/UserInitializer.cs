@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Numiteq.Common.Entities;
+using Numiteq.Common.Security;
 using Numiteq.DataAccess.DataContracts;
 using Numiteq.DataAccess.DataContracts.Initialization;
 using Numiteq.DataAccess.Initialization.Users;
@@ -32,7 +33,7 @@ namespace Numiteq.DataAccess.SqlDataAccess.Initialization
 
                 if (result.Succeeded)
                 {
-                    // TODO: Add roles
+                    userManager.AddToRoleAsync(applicationUser, SystemRoles.ADMIN).Wait();
                 }
             }
         }

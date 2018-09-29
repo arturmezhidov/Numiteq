@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Numiteq.Common\Numiteq.Common.csproj" />
     <ProjectReference Include="..\Numiteq.DataAccess.DataContracts\Numiteq.DataAccess.DataContracts.csproj" />
     <ProjectReference Include="..\Numiteq.DataAccess.Initialization\Numiteq.DataAccess.Initialization.csproj" />
   </ItemGroup>
