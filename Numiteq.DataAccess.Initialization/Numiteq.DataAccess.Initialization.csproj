@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Numiteq.Common.Entities\Numiteq.Common.Entities.csproj" />
+    <ProjectReference Include="..\Numiteq.Common\Numiteq.Common.csproj" />
     <ProjectReference Include="..\Numiteq.DataAccess.DataContracts\Numiteq.DataAccess.DataContracts.csproj" />
   </ItemGroup>
 

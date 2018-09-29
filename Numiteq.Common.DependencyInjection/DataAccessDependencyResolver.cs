@@ -8,7 +8,6 @@ using Numiteq.DataAccess.Initialization.Roles;
 using Numiteq.DataAccess.Initialization.Settings;
 using Numiteq.DataAccess.Initialization.Users;
 using Numiteq.DataAccess.SqlDataAccess;
-using Numiteq.DataAccess.SqlDataAccess.Initialization;
 
 namespace Numiteq.Common.DependencyInjection
 {

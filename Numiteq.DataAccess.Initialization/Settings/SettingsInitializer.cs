@@ -2,7 +2,7 @@
 using Numiteq.DataAccess.DataContracts;
 using Numiteq.DataAccess.DataContracts.Initialization;
 
-namespace Numiteq.DataAccess.SqlDataAccess.Initialization
+namespace Numiteq.DataAccess.Initialization.Settings
 {
     public class SettingsInitializer : BaseInitializer<Setting>, ITableInitializer
     {

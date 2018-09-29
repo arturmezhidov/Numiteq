@@ -1,9 +1,9 @@
 ﻿using Numiteq.DataAccess.DataContracts;
 using Numiteq.DataAccess.DataContracts.Initialization;
 
-namespace Numiteq.DataAccess.SqlDataAccess.Initialization
+namespace Numiteq.DataAccess.Initialization
 {
-    public abstract class BaseInitializer<TEntity>
+    public abstract class BaseInitializer<TEntity> where TEntity: class
     {
         protected IUnitOfWork Context { get; }
 

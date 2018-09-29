@@ -1,7 +1,6 @@
-﻿using Numiteq.Common.Entities;
-using Numiteq.DataAccess.DataContracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Numiteq.DataAccess.DataContracts;
 
 namespace Numiteq.DataAccess.SqlDataAccess
 {
@@ -17,7 +16,7 @@ namespace Numiteq.DataAccess.SqlDataAccess
             repositories = new Dictionary<string, object>();
         }
 
-        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : BaseEntity
+        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class
         {
             string key = typeof(TEntity).Name;
 

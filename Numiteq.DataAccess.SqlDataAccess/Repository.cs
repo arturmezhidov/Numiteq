@@ -1,14 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Numiteq.Common.Entities;
-using Numiteq.DataAccess.DataContracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
+using Numiteq.DataAccess.DataContracts;
 
 namespace Numiteq.DataAccess.SqlDataAccess
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected readonly DbContext Context;
         protected readonly DbSet<TEntity> Items;
@@ -55,7 +54,7 @@ namespace Numiteq.DataAccess.SqlDataAccess
 
         public virtual TEntity GetById(object entityId)
         {
-            TEntity result = Items.FirstOrDefault(e => entityId.Equals(e.Id));
+            TEntity result = Items.Find(entityId);
             return result;
         }
 

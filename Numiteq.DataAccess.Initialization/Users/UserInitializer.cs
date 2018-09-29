@@ -3,9 +3,8 @@ using Numiteq.Common.Entities;
 using Numiteq.Common.Security;
 using Numiteq.DataAccess.DataContracts;
 using Numiteq.DataAccess.DataContracts.Initialization;
-using Numiteq.DataAccess.Initialization.Users;
 
-namespace Numiteq.DataAccess.SqlDataAccess.Initialization
+namespace Numiteq.DataAccess.Initialization.Users
 {
     public class UserInitializer : BaseInitializer<User>, ITableInitializer
     {
