@@ -1,0 +1,42 @@
+﻿@model Numiteq.Areas.Admin.ViewModels.Users.IndexViewModel
+@{
+    ViewData["Title"] = "Users";
+    int i = 1;
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<a asp-area="Admin" asp-controller="Home">Back</a>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Admin</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <th scope="row">@i</th>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@(user.IsAdmin ? "YES" : "NO")</td>
+                <td>
+                    @if (user.IsAdmin)
+                    {
+                        <a asp-action="RemoveAdminRole" asp-route-id="@user.Id">Remove from admins</a>
+                    }
+                    else
+                    {
+                        <a asp-action="AddAdminRole" asp-route-id="@user.Id">Set admin</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

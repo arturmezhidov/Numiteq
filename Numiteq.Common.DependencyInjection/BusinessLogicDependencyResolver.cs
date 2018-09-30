@@ -19,6 +19,7 @@ namespace Numiteq.Common.DependencyInjection
             services.AddScoped<IServicesService, ServicesService>();
             services.AddScoped<IMessageEmailService, MessageEmailService>();
             services.AddScoped<IMessageService, MessageService>();
+            services.AddScoped<IUserService, UserService>();
 
             return services;
         }
