@@ -7,7 +7,5 @@ namespace Numiteq.BusinessLogic.BusinessContracts
         Number Add(int value, string label);
 
         Number Update(int id, int value, string label);
-
-        void Remove(int id);
     }
 }

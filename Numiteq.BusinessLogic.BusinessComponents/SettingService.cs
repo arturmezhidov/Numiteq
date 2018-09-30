@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices.ComTypes;
 using Numiteq.BusinessLogic.BusinessContracts;
 using Numiteq.Common.Entities;
 using Numiteq.Common.Settings;
@@ -40,6 +38,8 @@ namespace Numiteq.BusinessLogic.BusinessComponents
         {
             SettingsObjectInfo info = GetObjectInfo<T>();
             IDictionary<string, Setting> settings = GetSettings(info.Keys);
+            IList<Setting> addingSettings = new List<Setting>();
+            IList<Setting> updatingSettings = new List<Setting>();
 
             foreach (var property in info.Properties)
             {
@@ -49,20 +49,20 @@ namespace Numiteq.BusinessLogic.BusinessComponents
                 {
                     Setting setting = settings[property.Key];
                     setting.Value = value;
-                    Update(setting);
+                    updatingSettings.Add(setting);
                 }
                 else
                 {
-                    Setting setting = new Setting
+                    addingSettings.Add(new Setting
                     {
                         Key = property.Key,
                         Value = value
-                    };
-                    Add(setting);
+                    });
                 }
             }
 
-            Save();
+            AddRange(addingSettings);
+            UpdateRange(updatingSettings);
         }
 
         private IDictionary<string, Setting> GetSettings(string[] keys)

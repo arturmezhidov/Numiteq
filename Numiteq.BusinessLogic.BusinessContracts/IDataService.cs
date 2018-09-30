@@ -13,9 +13,15 @@ namespace Numiteq.BusinessLogic.BusinessContracts
 
         TEntity Update(TEntity entity);
 
+        IEnumerable<TEntity> UpdateRange(IEnumerable<TEntity> entities);
+
         TEntity Remove(TEntity entity);
 
+        IEnumerable<TEntity> RemoveRange(IEnumerable<TEntity> entities);
+
         TEntity Remove(object entityId);
+
+        IEnumerable<TEntity> RemoveRange(IEnumerable<object> entityIds);
 
         TEntity GetById(object entityId);
 

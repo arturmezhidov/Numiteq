@@ -35,21 +35,7 @@ namespace Numiteq.BusinessLogic.BusinessComponents
 
             Update(number);
 
-            Save();
-
             return number;
-        }
-
-        public void Remove(int id)
-        {
-            Number number = GetById(id);
-
-            if (number == null)
-            {
-                return;
-            }
-
-            Remove(number);
         }
     }
 }

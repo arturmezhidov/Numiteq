@@ -32,14 +32,26 @@ namespace Numiteq.DataAccess.SqlDataAccess
 
         public virtual TEntity Update(TEntity entity)
         {
-            Context.Entry(entity).State = EntityState.Modified;
+            Items.Update(entity);
             return entity;
+        }
+
+        public IEnumerable<TEntity> UpdateRange(IEnumerable<TEntity> entities)
+        {
+            Items.UpdateRange(entities);
+            return entities;
         }
 
         public virtual TEntity Remove(TEntity entity)
         {
             Items.Remove(entity);
             return entity;
+        }
+
+        public virtual IEnumerable<TEntity> RemoveRange(IEnumerable<TEntity> entities)
+        {
+            Items.RemoveRange(entities);
+            return entities;
         }
 
         public TEntity Remove(object entityId)

@@ -24,7 +24,6 @@ namespace Numiteq.BusinessLogic.BusinessComponents
             item.Icon = icon;
 
             Update(item);
-            Save();
 
             return item;
         }

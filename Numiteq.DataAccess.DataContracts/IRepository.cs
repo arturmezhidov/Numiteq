@@ -13,7 +13,11 @@ namespace Numiteq.DataAccess.DataContracts
 
         TEntity Update(TEntity entity);
 
+        IEnumerable<TEntity> UpdateRange(IEnumerable<TEntity> entities);
+
         TEntity Remove(TEntity entity);
+
+        IEnumerable<TEntity> RemoveRange(IEnumerable<TEntity> entities);
 
         TEntity Remove(object entityId);
 

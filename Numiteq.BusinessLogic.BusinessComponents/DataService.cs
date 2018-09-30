@@ -25,9 +25,9 @@ namespace Numiteq.BusinessLogic.BusinessComponents
                 throw new ArgumentNullException(nameof(entity));
             }
 
-            repository.Add(entity);
+            entity = repository.Add(entity);
 
-            unitOfWork.Save();
+            Save();
 
             return entity;
         }
@@ -44,9 +44,9 @@ namespace Numiteq.BusinessLogic.BusinessComponents
                 return entities;
             }
 
-            repository.AddRange(entities);
+            entities = repository.AddRange(entities);
 
-            unitOfWork.Save();
+            Save();
 
             return entities;
         }
@@ -60,7 +60,28 @@ namespace Numiteq.BusinessLogic.BusinessComponents
 
             entity = repository.Update(entity);
 
+            Save();
+
             return entity;
+        }
+
+        public IEnumerable<TEntity> UpdateRange(IEnumerable<TEntity> entities)
+        {
+            if (entities == null)
+            {
+                throw new ArgumentNullException(nameof(entities));
+            }
+
+            if (!entities.Any())
+            {
+                return entities;
+            }
+
+            entities = repository.UpdateRange(entities);
+
+            Save();
+
+            return entities;
         }
 
         public virtual TEntity Remove(TEntity entity)
@@ -70,10 +91,30 @@ namespace Numiteq.BusinessLogic.BusinessComponents
                 throw new ArgumentNullException(nameof(entity));
             }
 
-            repository.Remove(entity);
-            unitOfWork.Save();
+            entity = repository.Remove(entity);
+
+            Save();
 
             return entity;
+        }
+
+        public IEnumerable<TEntity> RemoveRange(IEnumerable<TEntity> entities)
+        {
+            if (entities == null)
+            {
+                throw new ArgumentNullException(nameof(entities));
+            }
+
+            if (!entities.Any())
+            {
+                return entities;
+            }
+
+            entities = repository.RemoveRange(entities);
+
+            Save();
+
+            return entities;
         }
 
         public virtual TEntity Remove(object entityId)
@@ -83,14 +124,29 @@ namespace Numiteq.BusinessLogic.BusinessComponents
                 throw new ArgumentNullException(nameof(entityId));
             }
 
-            TEntity entity = GetById(entityId);
+            TEntity entity = repository.Remove(entityId);
 
-            if (entity != null)
-            {
-                entity = Remove(entity);
-            }
+            Save();
 
             return entity;
+        }
+
+        public IEnumerable<TEntity> RemoveRange(IEnumerable<object> entityIds)
+        {
+            if (entityIds == null)
+            {
+                throw new ArgumentNullException(nameof(entityIds));
+            }
+
+            if (!entityIds.Any())
+            {
+                return new List<TEntity>();
+            }
+
+            var entities = repository.Find(i => entityIds.Contains(i.Id));
+            var deletedEntities = RemoveRange(entities);
+
+            return entities;
         }
 
         public virtual TEntity GetById(object entityId)
@@ -111,7 +167,7 @@ namespace Numiteq.BusinessLogic.BusinessComponents
             return result;
         }
 
-        protected void Save()
+        protected virtual void Save()
         {
             unitOfWork.Save();
         }
