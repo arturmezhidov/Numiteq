@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Numiteq.Common.Security;
 
 namespace Numiteq.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SystemRoles.ADMIN)]
     public class HomeController : Controller
     {
         public IActionResult Index()

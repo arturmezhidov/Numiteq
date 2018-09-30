@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Numiteq.Areas.Admin.ViewModels.Settings;
+using Numiteq.Common.Security;
 using Numiteq.Controllers;
 
 namespace Numiteq.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SystemRoles.ADMIN)]
     public class SettingsController : BaseController
     {
         public SettingsController(IServiceProvider serviceProvider) : base(serviceProvider)

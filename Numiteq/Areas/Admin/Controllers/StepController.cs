@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Numiteq.Areas.Admin.ViewModels.Steps;
 using Numiteq.BusinessLogic.BusinessContracts;
 using Numiteq.Common.Entities;
+using Numiteq.Common.Security;
 using Numiteq.Controllers;
 
 namespace Numiteq.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SystemRoles.ADMIN)]
     public class StepController : BaseController
     {
         private readonly IStepService stepService;

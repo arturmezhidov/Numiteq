@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Numiteq.Areas.Admin.ViewModels.Expertises;
 using Numiteq.BusinessLogic.BusinessContracts;
 using Numiteq.Common.Entities;
+using Numiteq.Common.Security;
 using Numiteq.Controllers;
 
 namespace Numiteq.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SystemRoles.ADMIN)]
     public class ExpertiseController : BaseController
     {
         private readonly IExpertiseService expertiseService;
