@@ -1,0 +1,50 @@
+﻿@import "variables.scss";
+
+.btn {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $primary-color-medium;
+    transition: 0.5s ease-out;
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &:hover {
+        color: $primary-color-light;
+    }
+
+    &--outline {
+        padding: 12px 50px;
+        border-color: $primary-color-medium;
+
+        &:hover {
+            background: rgba(255,255,255,.2);
+            border-color: rgba(255,255,255,.1);
+        }
+    }
+
+    &--circle {
+        border-radius: 30px;
+    }
+
+    &--full {
+        padding: 12px 50px;
+        background: rgba(255,255,255,.1);
+
+        &:hover {
+            background: rgba(255,255,255,.2);
+        }
+    }
+
+    &--small {
+        font-size: 11px;
+        padding: 12px 30px;
+    }
+
+    &__icon {
+        margin-right: 5px;
+    }
+}
+
+

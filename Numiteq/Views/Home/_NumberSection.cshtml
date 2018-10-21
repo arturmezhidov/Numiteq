@@ -1,22 +1,19 @@
 ﻿@model Numiteq.ViewModels.Home.NumberSectionViewModel
 
-<div class="container-fluid d-flex justify-content-center numbers">
-    <div class="d-flex flex-column">
-        
-        <div class="title">
-            <div class="title-h2">@Model.NumberSettings.Title</div>
-            <div class="title-description">@Model.NumberSettings.Description</div>
+<div class="section number-section section--light">
+    <div class="container">
+        <div class="text-center">
+            <div class="title title--large">@Model.NumberSettings.Title</div>
+            <div class="text text--dark">@Model.NumberSettings.Description</div>
         </div>
-
-        <div class="numbers-row d-flex flex-row flex-wrap">
+        <div class="number__list text-center">
             @foreach (var number in Model.Numbers)
             {
-                <div class="num-element">
-                    <div>@number.Value</div>
-                    <span>@number.Label</span>
+                <div class="number">
+                    <div class="number__value">@number.Value</div>
+                    <div class="number__label">@number.Label</div>
                 </div>
             }
         </div>
-
     </div>
 </div>

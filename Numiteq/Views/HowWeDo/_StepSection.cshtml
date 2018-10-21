@@ -1,0 +1,22 @@
+﻿@model Numiteq.ViewModels.HowWeDo.StepSectionViewModel
+
+<div class="section section--light step-section">
+    <div class="container">
+        <div class="title title--large">@Model.Settings.Title</div>
+        <div class="text text--dark">@Model.Settings.Description</div>
+        <div class="step__list">
+            @foreach (var step in Model.Steps)
+            {
+                <div class="panel panel--full">
+                    <div class="step">
+                        <div class="step__icon">@Html.Raw(step.Icon)</div>
+                        <div class="step__content">
+                            <div class="title title--small">@step.Title</div>
+                            <div class="text text--small">@step.Description</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

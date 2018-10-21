@@ -1,0 +1,21 @@
+﻿@import "../variables.scss";
+
+.main-service-section {
+    .banner {
+        background: url(../images/office.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .service {
+        min-height: 260px;
+        margin-bottom: 20px;
+
+        &__icon {
+            min-height: 60px;
+        }
+    }
+
+    .section {
+        padding-bottom: 30px;
+    }
+}

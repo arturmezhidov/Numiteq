@@ -1,0 +1,31 @@
+﻿@import "../variables.scss";
+
+.footer {
+    background: url(../images/footer_bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &__inner {
+        display: block;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(5, 5, 5, 0.8)
+    }
+
+    &__top {
+        margin-bottom: 100px;
+    }
+
+    &__bottom {
+        margin-top: 80px;
+    }
+
+    hr {
+        background: $primary-color-dark;
+    }
+
+    .contact-us-button {
+        margin-top: 30px;
+    }
+}

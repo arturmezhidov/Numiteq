@@ -1,0 +1,17 @@
+﻿.step-section {
+    .step {
+        &__icon {
+            display: inline-block;
+            float: left;
+            width: 100px;
+        }
+
+        &__content {
+            margin-left: 100px;
+        }
+
+        &__list {
+            margin-top: 80px;            
+        }
+    }
+}

@@ -14,10 +14,12 @@ namespace Numiteq.Controllers
     public class HomeController : BaseController
     {
         private readonly INumberService numberService;
+        private readonly IMainServicesService servicesService;
 
-        public HomeController(IServiceProvider serviceProvider, INumberService numberService) : base(serviceProvider)
+        public HomeController(IServiceProvider serviceProvider, INumberService numberService, IMainServicesService servicesService) : base(serviceProvider)
         {
             this.numberService = numberService;
+            this.servicesService = servicesService;
         }
 
         public IActionResult Index()
@@ -25,6 +27,7 @@ namespace Numiteq.Controllers
             IndexViewModel vm = new IndexViewModel
             {
                 Numbers = GetNumberSection(),
+                Services = GetServiceSection(),
                 HomeDescription = GetHomeDescriptionSection()
             };
             return View(vm);
@@ -43,6 +46,15 @@ namespace Numiteq.Controllers
             };
         }
 
+        private ServiceSectionViewModel GetServiceSection()
+        {
+            return new ServiceSectionViewModel
+            {
+                Settings = SettingService.GetSettings<ServiceSettingsViewModel>(),
+                Services = servicesService.GetAll().Select(ToViewModel)
+            };
+        }
+
         private NumberSectionViewModel GetNumberSection()
         {
             return new NumberSectionViewModel
@@ -58,6 +70,16 @@ namespace Numiteq.Controllers
             {
                 Value = number.Value,
                 Label = number.Label
+            };
+        }
+
+        private ServiceViewModel ToViewModel(MainService service)
+        {
+            return new ServiceViewModel
+            {
+                Title = service.Title,
+                Description = service.Description,
+                Icon = service.Icon
             };
         }
     }

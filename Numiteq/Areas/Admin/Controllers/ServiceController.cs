@@ -100,7 +100,7 @@ namespace Numiteq.Areas.Admin.Controllers
                 return View(vm);
             }
 
-            serviceService.Update(vm.Id, vm.Title, vm.Description, vm.Icon);
+            serviceService.Update(vm.Id, vm.Title, vm.Description, GetStringFromFile(vm.NewIcon));
 
             return RedirectToIndex();
         }

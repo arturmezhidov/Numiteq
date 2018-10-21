@@ -1,0 +1,39 @@
+﻿@import "../variables.scss";
+
+.number-section {
+    .number {
+        display: inline-block;
+        position: relative;
+        padding: 0 50px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 25px;
+            right: 0;
+            border-right: 1px solid $line-separ;
+            height: 48px;
+        }
+
+        &:last-child {
+            &::after {
+                content: none;
+            }
+        }
+
+        &__value {
+            font-weight: 100;
+            font-size: 86px;
+            line-height: 100px;
+        }
+
+        &__label {
+            font-family: "OpenSans";
+            font-size: 15px;
+        }
+
+        &__list {
+            margin-top: 50px;
+        }
+    }
+}

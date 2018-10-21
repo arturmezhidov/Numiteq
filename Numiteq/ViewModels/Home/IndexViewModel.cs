@@ -2,8 +2,10 @@
 {
     public class IndexViewModel
     {
-        public NumberSectionViewModel Numbers { get; set; }
-
         public HomeDescriptionSectionViewModel HomeDescription { get; set; }
+
+        public ServiceSectionViewModel Services { get; set; }
+
+        public NumberSectionViewModel Numbers { get; set; }
     }
 }

@@ -1,0 +1,22 @@
+﻿@model Numiteq.ViewModels.WhatWeDo.ExpertiseSectionViewModel
+
+<div class="section section--xlight">
+    <div class="container">
+        <div class="title title--large">@Model.Settings.Title</div>
+        <div class="text text--dark">@Model.Settings.Description</div>
+        <div class="row mt-md-5">
+            @foreach (var expertise in Model.Expertises)
+            {
+                <div class="col-md-4 p-2">
+                    <div class="panel panel--card panel--bordered">
+                        <div class="expertise">
+                            <div>@Html.Raw(expertise.Icon)</div>
+                            <div class="title title--small">@expertise.Title</div>
+                            <div class="text text--small">@expertise.Description</div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

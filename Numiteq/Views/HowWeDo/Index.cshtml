@@ -1,5 +1,6 @@
-﻿@{
+﻿@model Numiteq.ViewModels.HowWeDo.IndexViewModel
+@{
     ViewData["Title"] = "How we do?";
 }
 
-<h2>@ViewData["Title"]</h2>
+@Html.Partial("_StepSection", Model.Steps)

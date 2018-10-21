@@ -1,0 +1,22 @@
+﻿@import "variables.scss";
+
+.panel {
+    display: block;
+    width: 100%;
+    background: #FFFFFF;
+
+    &--full {
+        margin-top: 20px;
+        padding: 30px 50px 40px;
+        min-height: 200px;
+    }
+
+    &--bordered {
+        border: 3px solid $primary-color-light;
+    }
+
+    &--card {
+        padding: 40px 30px;
+        min-height: 360px;
+    }
+}

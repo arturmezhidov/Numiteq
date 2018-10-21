@@ -1,0 +1,56 @@
+﻿@import "variables.scss";
+
+.text {
+    font-size: 20px;
+    line-height: 1.8em;
+    white-space: pre-wrap;
+
+    &--small {
+        font-size: 14px !important;
+    }
+
+    &--dark {
+        color: $primary-color-dark !important;
+    }
+
+    &--light {
+        color: $primary-color-xlight !important;
+    }
+}
+
+.title {
+    display: block;
+    color: $primary-color-dark;
+    font-weight: 600;
+
+
+    &--small {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+
+    &--large {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+
+    &--xlarge {
+        font-size: 48px;
+    }
+
+    &--dark {
+        color: $primary-color-dark !important;
+    }
+
+    &--light {
+        color: $primary-color-light !important;
+    }
+
+    &--upper {
+        margin-bottom: 25px;
+        font-size: 13px;
+        font-weight: 200;
+        color: $primary-color-medium;
+        text-transform: uppercase;
+    }
+}

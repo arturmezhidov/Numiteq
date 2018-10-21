@@ -1,0 +1,17 @@
+﻿@import "variables.scss";
+
+.section {
+    padding: 100px 0;
+
+    &--light {
+        background: $primary-color-light !important;
+    }
+
+    &--dark {
+        background: $primary-color-dark !important;
+    }
+
+    &--xlight {
+        background: $primary-color-xlight !important;
+    }
+}

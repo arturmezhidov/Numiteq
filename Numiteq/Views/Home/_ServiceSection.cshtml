@@ -1,0 +1,28 @@
+﻿@model Numiteq.ViewModels.Home.ServiceSectionViewModel
+
+<div class="section--light main-service-section">
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-5 banner"></div>
+            <div class="col col-md-7">
+                <div class="section ml-lg-5 ml-md-4 ml-sm-3">
+                    <div class="title title--large">@Model.Settings.Title</div>
+                    <div class="text text--dark">@Model.Settings.Description</div>
+                    <hr />
+                    <div class="row">
+                        @foreach (var service in Model.Services)
+                        {
+                            <div class="col col-md-6">
+                                <div class="service">
+                                    <div class="service__icon">@Html.Raw(service.Icon)</div>
+                                    <div class="title title--small">@service.Title</div>
+                                    <div class="text text--small">@service.Description</div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

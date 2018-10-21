@@ -21,7 +21,11 @@ namespace Numiteq.BusinessLogic.BusinessComponents
 
             item.Title = title;
             item.Description = desc;
-            item.Icon = icon;
+
+            if (!string.IsNullOrEmpty(icon))
+            {
+                item.Icon = icon;
+            }
 
             Update(item);
 

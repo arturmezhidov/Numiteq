@@ -1,9 +1,43 @@
-﻿$bg-white: #ffffff;
+﻿
+.navbar {
+    margin: 20px 40px;
+
+    a:hover {
+        color: rgba(255,255,255, .9);
+    }
+
+    .logo {
+        height: 57px;
+    }
+
+    .navbar-nav {
+        color: rgba(255,255,255, .5);
+        list-style-type: none;
+
+        .button-bg-fill {
+            margin-left: 20px;
+
+            .nav-link {
+                padding: 16px 37px;
+            }
+        }
+
+        .nav-link {
+            padding: 20px;
+            font-size: 13px;
+            line-height: 10px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/*$bg-white: #ffffff;
 $color-white-trans: rgba(255,255,255, .5);
-$line-separ: #e0e0e0;
+
 $title: #343434;
 $title-descr: #767676;
 $background-text: #232323;
+
 
 * {
     font-family: "OpenSans";
@@ -131,7 +165,7 @@ footer {
     }
 }
 
-/* Carousel */
+// Carousel
 .carousel-item {
     height: 100vh;
     width: 100%;
@@ -143,26 +177,9 @@ footer {
     }
 }
 
-/* Description */
-.description {
-    margin-top: 130px;
-    margin-bottom: 140px;
-    color: $bg-white;
+ 
 
-    .title {
-        margin-top: 0;
-        font-family: "GothamPro";
-        font-weight: 100;
-        font-style: normal;
-        font-size: 13px;
-        line-height: 34px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: rgba(255,255,255, .7);
-    }
-}
-
-/* Servises */
+// Servises 
 .services {
     background: url(../images/office.jpg) no-repeat;
     background-size: contain;
@@ -176,19 +193,6 @@ footer {
         background: $bg-white;
         border-bottom: 1px solid $line-separ;
         position: relative;
-
-        .title {
-            margin-left: auto;
-            margin-right: auto;
-
-            &::after {
-                content: "";
-                margin-top: 70px;
-                display: block;
-                border-bottom: 1px solid $line-separ;
-                width: 100%;
-            }
-        }
     }
 
     &-cont {
@@ -219,59 +223,4 @@ footer {
         }
     }
 }
-
-/* Numbers */
-.numbers {
-    background: $bg-white;
-    padding-bottom: 147px;
-
-    .title {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 70px;
-        text-align: center;
-    }
-
-    &-row .num-element {
-        text-align: center;
-        margin-right: 176px;
-
-        div {
-            position: relative;
-            font-family: "GothamPro";
-            font-weight: 100;
-            font-style: normal;
-            font-size: 96px;
-            line-height: 90px;
-            color: $title;
-
-            &::after {
-                content: "";
-                position: absolute;
-                top: 21px;
-                right: -88px;
-                display: block;
-                border-right: 1px solid $line-separ;
-                height: 48px;
-            }
-        }
-
-        &:last-child {
-            margin-right: 0;
-
-            div::after {
-                content: none;
-            }
-        }
-
-        span {
-            font-family: "OpenSans";
-            font-weight: normal;
-            font-style: normal;
-            font-size: 15px;
-            line-height: 26px;
-            color: $title-descr;
-        }
-    }
-}
-
+*/
