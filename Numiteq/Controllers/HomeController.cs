@@ -8,6 +8,7 @@ using Numiteq.BusinessLogic.BusinessContracts;
 using Numiteq.Common.Entities;
 using Numiteq.Models;
 using Numiteq.ViewModels.Home;
+using Numiteq.ViewModels.Shared;
 
 namespace Numiteq.Controllers
 {
@@ -26,6 +27,7 @@ namespace Numiteq.Controllers
         {
             IndexViewModel vm = new IndexViewModel
             {
+                Header = GetHeadSection(),
                 Numbers = GetNumberSection(),
                 Services = GetServiceSection(),
                 HomeDescription = GetHomeDescriptionSection()
@@ -36,6 +38,19 @@ namespace Numiteq.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private HeadSectionViewModel GetHeadSection()
+        {
+            HomeBannerViewModel banner = SettingService.GetSettings<HomeBannerViewModel>();
+            return new HeadSectionViewModel
+            {
+                Title = banner.Header,
+                Description = banner.Text,
+                ButtonLink = banner.ButtonLink,
+                ButtonText = banner.ButtonText,
+                BackgroundImage = "/images/office.jpg"
+            };
         }
 
         private HomeDescriptionSectionViewModel GetHomeDescriptionSection()

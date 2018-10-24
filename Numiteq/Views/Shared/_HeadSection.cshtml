@@ -1,0 +1,11 @@
+﻿@model Numiteq.ViewModels.Shared.HeadSectionViewModel
+
+<header class="header" style="background-image: url(@Model.BackgroundImage)">
+    <div class="section header__inner">
+        <div class="container">
+            <div class="title title--light title--xlarge">@Model.Title</div>
+            <div class="text text--light">@Model.Description</div>
+            <a href="@Model.ButtonLink" class="btn btn--outline btn--circle">@Model.ButtonText</a>
+        </div>
+    </div>
+</header>

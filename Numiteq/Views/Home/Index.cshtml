@@ -3,6 +3,15 @@
     ViewData["Title"] = "Home";
 }
 
+@Html.Partial("_HeadSection", Model.Header)
+
+@Html.Partial("_HomeDescriptionSection", Model.HomeDescription)
+
+@Html.Partial("_ServiceSection", Model.Services)
+
+@Html.Partial("_NumberSection", Model.Numbers)
+
+
 <!-- Карусель -->
 @*<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -43,12 +52,3 @@
             <span class="sr-only">Next</span>
         </a>
     </div>*@
-
-<!-- Description -->
-@Html.Partial("_HomeDescriptionSection", Model.HomeDescription)
-
-<!-- Services -->
-@Html.Partial("_ServiceSection", Model.Services)
-
-<!-- Numbers -->
-@Html.Partial("_NumberSection", Model.Numbers)

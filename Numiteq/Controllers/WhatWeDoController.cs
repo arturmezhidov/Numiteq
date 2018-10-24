@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Numiteq.BusinessLogic.BusinessContracts;
 using Numiteq.Common.Entities;
+using Numiteq.ViewModels.Shared;
 using Numiteq.ViewModels.WhatWeDo;
 
 namespace Numiteq.Controllers
@@ -22,10 +23,24 @@ namespace Numiteq.Controllers
         {
             IndexViewModel vm = new IndexViewModel
             {
+                Head = GetHeadSection(),
                 Services = GetServiceSection(),
                 Expertises = GetExpertiseSection()
             };
             return View(vm);
+        }
+
+        private HeadSectionViewModel GetHeadSection()
+        {
+            WwdBannerViewModel banner = SettingService.GetSettings<WwdBannerViewModel>();
+            return new HeadSectionViewModel
+            {
+                Title = banner.Header,
+                Description = banner.Text,
+                ButtonLink = banner.ButtonLink,
+                ButtonText = banner.ButtonText,
+                BackgroundImage = "/images/wwd.jpg"
+            };
         }
 
         private ServiceSectionViewModel GetServiceSection()

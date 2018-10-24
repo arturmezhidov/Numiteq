@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Numiteq.BusinessLogic.BusinessContracts;
 using Numiteq.Common.Entities;
 using Numiteq.ViewModels.HowWeDo;
+using Numiteq.ViewModels.Shared;
 
 namespace Numiteq.Controllers
 {
@@ -20,9 +21,23 @@ namespace Numiteq.Controllers
         {
             IndexViewModel vm = new IndexViewModel
             {
+                Head = GetHeadSection(),
                 Steps = GetStepSection()
             };
             return View(vm);
+        }
+
+        private HeadSectionViewModel GetHeadSection()
+        {
+            HwdBannerViewModel banner = SettingService.GetSettings<HwdBannerViewModel>();
+            return new HeadSectionViewModel
+            {
+                Title = banner.Header,
+                Description = banner.Text,
+                ButtonLink = banner.ButtonLink,
+                ButtonText = banner.ButtonText,
+                BackgroundImage = "/images/hwd.jpg"
+            };
         }
 
         private StepSectionViewModel GetStepSection()

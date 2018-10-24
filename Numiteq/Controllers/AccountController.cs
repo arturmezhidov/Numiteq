@@ -15,7 +15,7 @@ namespace Numiteq.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -23,10 +23,11 @@ namespace Numiteq.Controllers
         private readonly ILogger _logger;
 
         public AccountController(
+            IServiceProvider serviceProvider,
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger) : base(serviceProvider)
         {
             _userManager = userManager;
             _signInManager = signInManager;
