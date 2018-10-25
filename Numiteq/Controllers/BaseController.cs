@@ -36,7 +36,7 @@ namespace Numiteq.Controllers
         {
             LayoutViewModel vm = new LayoutViewModel
             {
-                Header = SettingService.GetSettings<HeaderViewModel>(),
+                Navbar = SettingService.GetSettings<NavbarViewModel>(),
                 Footer = SettingService.GetSettings<FooterViewModel>()
             };
             ViewData.Add(layoutDataKey, vm);

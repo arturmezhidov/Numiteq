@@ -4,7 +4,7 @@ using Numiteq.Common.Settings;
 namespace Numiteq.ViewModels.Layout
 {
     [SettingsType(SettingsKeys.Header)]
-    public class HeaderViewModel
+    public class NavbarViewModel
     {
         public string Link1Title { get; set; }
 
