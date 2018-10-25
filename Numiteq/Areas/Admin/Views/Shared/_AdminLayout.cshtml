@@ -10,8 +10,18 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div class="section section--light">
         <div class="container">
+            <div class="section-top">
+                @if (ViewData.ContainsKey("Title"))
+                {
+                    <div class="title title--large">@ViewData["Title"]</div>
+                }
+                @if (ViewData.ContainsKey("Description"))
+                {
+                    <div class="text text--dark">@ViewData["Description"]</div>
+                }
+            </div>
             @RenderBody()
         </div>
     </div>
