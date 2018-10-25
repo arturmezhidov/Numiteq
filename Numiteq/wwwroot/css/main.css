@@ -224,3 +224,15 @@ $background-text: #232323;
 
 .step-section .step__list {
   margin-top: 80px; }
+
+.admin-header {
+  background: url(../images/wwd.jpg) no-repeat;
+  background-size: cover;
+  background-position: center; }
+  .admin-header__inner {
+    padding-top: 150px;
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 5, 0.8); }
