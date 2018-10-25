@@ -1,11 +1,10 @@
 ﻿
 @{
-    ViewData["Title"] = "Settings";
+    ViewData["Title"] = "Setings";
+    ViewData["Description"] = "Application settings links";
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<div>
+<div class="link-group">
     <p><a asp-action="Header" asp-controller="Layout">Navbar settings</a></p>
     <p><a asp-action="Footer" asp-controller="Layout">Footer settings</a></p>
     <p><a asp-action="HomeDescription" asp-controller="Settings">Home page description</a></p>

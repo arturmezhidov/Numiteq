@@ -241,3 +241,51 @@ $background-text: #232323;
   margin-bottom: 30px; }
   .admin .section-top .title {
     margin: 0; }
+
+.admin .link-group p {
+  padding: 5px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid gray; }
+  .admin .link-group p a {
+    font-size: 18px;
+    color: gray; }
+    .admin .link-group p a:hover {
+      color: darkslategray; }
+
+.admin h4 {
+  font-size: 1.5rem;
+  margin: 50px 0 20px; }
+
+.admin textarea {
+  height: 200px; }
+
+.admin .form-control {
+  font-size: 15px;
+  padding: 20px; }
+
+.admin input[type=file].form-control {
+  padding: 2px; }
+
+.admin .form-button .btn {
+  padding: 10px 40px;
+  margin-right: 10px; }
+
+.admin .toolbar {
+  text-align: right;
+  background: #D0D0D0;
+  margin: 0 0 10px; }
+  .admin .toolbar a {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    color: #343434; }
+
+.admin th, .admin td {
+  padding: 20px; }
+  .admin th .btn, .admin td .btn {
+    padding: 0;
+    margin-bottom: 5px; }
+    .admin th .btn:last-child, .admin td .btn:last-child {
+      margin-bottom: 0; }
+    .admin th .btn:hover, .admin td .btn:hover {
+      color: #343434; }

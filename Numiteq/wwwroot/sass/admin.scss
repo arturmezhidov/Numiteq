@@ -1,4 +1,6 @@
-﻿.admin {
+﻿@import "variables.scss";
+
+.admin {
     &-header {
         background: url(../images/wwd.jpg) no-repeat;
         background-size: cover;
@@ -19,6 +21,78 @@
 
         .title {
             margin: 0;
+        }
+    }
+
+    .link-group {
+        p {
+            padding: 5px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid gray;
+
+            a {
+                font-size: 18px;
+                color: gray;
+
+                &:hover {
+                    color: darkslategray;
+                }
+            }
+        }
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        margin: 50px 0 20px;
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    .form-control {
+        font-size: 15px;
+        padding: 20px;
+    }
+
+    input[type=file].form-control {
+        padding: 2px;
+    }
+
+    .form-button {
+        .btn {
+            padding: 10px 40px;
+            margin-right: 10px;
+        }
+    }
+
+    .toolbar {
+        text-align: right;
+        background: #D0D0D0;
+        margin: 0 0 10px;
+
+        a {
+            display: inline-block;
+            padding: 10px;
+            text-align: center;
+            color: $primary-color-dark;
+        }
+    }
+
+    th, td {
+        padding: 20px;
+
+        .btn {
+            padding: 0;
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:hover {
+                color: $primary-color-dark;
+            }
         }
     }
 }
