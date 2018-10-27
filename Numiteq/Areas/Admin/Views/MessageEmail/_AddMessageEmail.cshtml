@@ -5,11 +5,10 @@
         <form method="post" asp-action="Add" class="form-inline">
 
             <div class="form-group">
-                <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" />
+                <label asp-for="Email" class="mr-3"></label>
+                <input asp-for="Email" class="form-control mr-3" />
+                <button type="submit" class="btn btn-dark btn--large">Save</button>
             </div>
-
-            <button type="submit" class="btn btn-success">Save</button>
 
             <span asp-validation-for="Email" class="text-danger"></span>
 

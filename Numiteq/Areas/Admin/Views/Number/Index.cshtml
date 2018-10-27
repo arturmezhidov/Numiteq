@@ -4,11 +4,11 @@
     int i = 0;
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<a asp-action="Add">Add</a> |
-<a asp-action="Settings">Settings</a> |
-<a asp-area="Admin" asp-controller="Home">Back</a>
+<div class="toolbar">
+    <a asp-action="Add" class="btn btn--full">Add</a>
+    <a asp-action="Settings" class="btn btn--full">Settings</a>
+    <a asp-area="Admin" asp-controller="Home" class="btn btn--full">Back</a>
+</div>
 
 <table class="table">
     <thead class="thead-dark">
@@ -22,13 +22,15 @@
     <tbody>
         @foreach (var number in Model.Numbers)
         {
+            i++;
+
             <tr>
                 <th scope="row">@i</th>
                 <td>@number.Value</td>
                 <td>@number.Label</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@number.Id">Edit</a>
-                    | <a asp-action="Delete" asp-route-id="@number.Id">Delete</a>
+                <td class="action">
+                    <a asp-action="Edit" asp-route-id="@number.Id" class="btn">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@number.Id" class="btn">Delete</a>
                 </td>
             </tr>
         }

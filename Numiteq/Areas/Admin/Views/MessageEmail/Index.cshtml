@@ -7,16 +7,16 @@
     int i = 0;
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<a asp-area="Admin" asp-controller="Home">Back</a>
-
-<br />
+<h4>Add new email</h4>
 
 @Html.Partial("_AddMessageEmail", new AddMessageEmailViewModel())
 
-<br />
+<hr />
 
+<div class="toolbar">
+    <a asp-area="Admin" asp-controller="Home">Back</a>
+</div>
+ 
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -28,11 +28,13 @@
     <tbody>
         @foreach (var email in Model.Emails)
         {
+            i++;
+
             <tr>
                 <th scope="row">@i</th>
                 <td>@email.Email</td>
-                <td>
-                    <a asp-action="Delete" asp-route-id="@email.Id">Delete</a>
+                <td class="action">
+                    <a asp-action="Delete" asp-route-id="@email.Id" class="btn">Delete</a>
                 </td>
             </tr>
         }

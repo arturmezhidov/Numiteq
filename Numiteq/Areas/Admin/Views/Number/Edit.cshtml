@@ -4,12 +4,11 @@
 }
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
         <form method="post">
 
             <input asp-for="Id" type="hidden" />
 
-            <h4>@ViewData["Title"]</h4>
             <div class="form-group">
                 <label asp-for="Value"></label>
                 <input asp-for="Value" class="form-control" />
@@ -21,8 +20,12 @@
                 <span asp-validation-for="Label" class="text-danger"></span>
             </div>
 
-            <button type="submit" class="btn btn-success">Save</button>
-            <a asp-action="Index" class="btn btn-default">Cancel</a>
+            <hr />
+
+            <div class="form-button">
+                <button type="submit" class="btn btn-dark">Save</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+            </div>
 
         </form>
     </div>

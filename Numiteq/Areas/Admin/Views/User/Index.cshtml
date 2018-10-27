@@ -4,9 +4,9 @@
     int i = 1;
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<a asp-area="Admin" asp-controller="Home">Back</a>
+<div class="toolbar">
+    <a asp-area="Admin" asp-controller="Home" class="btn btn--full">Back</a>
+</div>
 
 <table class="table">
     <thead class="thead-dark">
@@ -21,6 +21,8 @@
     <tbody>
         @foreach (var user in Model.Users)
         {
+            i++;
+
             <tr>
                 <th scope="row">@i</th>
                 <td>@user.UserName</td>
@@ -29,11 +31,11 @@
                 <td>
                     @if (user.IsAdmin)
                     {
-                        <a asp-action="RemoveAdminRole" asp-route-id="@user.Id">Remove from admins</a>
+                        <a asp-action="RemoveAdminRole" asp-route-id="@user.Id" class="btn">Remove from admins</a>
                     }
                     else
                     {
-                        <a asp-action="AddAdminRole" asp-route-id="@user.Id">Set admin</a>
+                        <a asp-action="AddAdminRole" asp-route-id="@user.Id" class="btn">Set admin</a>
                     }
                 </td>
             </tr>

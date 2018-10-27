@@ -94,5 +94,16 @@
                 color: $primary-color-dark;
             }
         }
+
+        &.action {
+            width: 120px;
+        }
+    }
+
+    .form-inline {
+        .btn {
+            font-size: 12px;
+            padding: 10px 30px;
+        }
     }
 }

@@ -289,3 +289,9 @@ $background-text: #232323;
       margin-bottom: 0; }
     .admin th .btn:hover, .admin td .btn:hover {
       color: #343434; }
+  .admin th.action, .admin td.action {
+    width: 120px; }
+
+.admin .form-inline .btn {
+  font-size: 12px;
+  padding: 10px 30px; }
