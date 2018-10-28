@@ -19,6 +19,15 @@ a:hover {
   cursor: pointer;
   transition: 0.5s ease-out; }
 
+.field-validation-error {
+  display: block;
+  margin-top: 5px; }
+  .field-validation-error span {
+    color: tomato; }
+
+.input-validation-error {
+  border-color: tomato; }
+
 .section {
   padding: 100px 0; }
   .section--light {
@@ -47,9 +56,11 @@ a:hover {
     border-radius: 30px; }
   .btn--full {
     padding: 12px 50px;
-    background: rgba(255, 255, 255, 0.1); }
-    .btn--full:hover {
-      background: rgba(255, 255, 255, 0.2); }
+    background: rgba(255, 255, 255, 0.2); }
+  .btn--dark {
+    background: rgba(0, 0, 0, 0.8); }
+    .btn--dark:hover {
+      background: rgba(0, 0, 0, 0.6); }
   .btn--small {
     font-size: 11px;
     padding: 12px 30px; }
@@ -224,6 +235,37 @@ $background-text: #232323;
 
 .step-section .step__list {
   margin-top: 80px; }
+
+.contact-form-section .form {
+  text-align: center; }
+  .contact-form-section .form__inner {
+    display: inline-block;
+    width: 650px;
+    text-align: left; }
+    .contact-form-section .form__inner .col-md-6:first-child {
+      padding-right: 7px; }
+    .contact-form-section .form__inner .col-md-6:last-child {
+      padding-left: 7px; }
+  .contact-form-section .form .form-control {
+    padding: 22px;
+    border: 2px solid #EEE; }
+    .contact-form-section .form .form-control::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #CCC;
+      opacity: 1;
+      /* Firefox */ }
+    .contact-form-section .form .form-control:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #CCC; }
+    .contact-form-section .form .form-control::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #CCC; }
+  .contact-form-section .form textarea {
+    height: 100px; }
+  .contact-form-section .form .form-button {
+    margin-top: 20px; }
+    .contact-form-section .form .form-button .btn {
+      padding: 15px 130px; }
 
 .admin-header {
   background: url(../images/wwd.jpg) no-repeat;

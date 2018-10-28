@@ -19,6 +19,7 @@ namespace Numiteq.BusinessLogic.BusinessComponents
             SmtpClient client = new SmtpClient(PlatformConfiguration.SmtpServerName);
             client.UseDefaultCredentials = false;
             client.Credentials = new NetworkCredential(PlatformConfiguration.SmtpEmailAddress, PlatformConfiguration.SmtpEmailPassword);
+            client.EnableSsl = true;
 
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress(PlatformConfiguration.SmtpEmailAddress);

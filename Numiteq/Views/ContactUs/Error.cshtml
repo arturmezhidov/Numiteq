@@ -1,0 +1,25 @@
+﻿@model Numiteq.ViewModels.ContactUs.ErrorViewModel
+
+@{
+    ViewData["Title"] = "Contact Us - Error";
+}
+
+@Html.Partial("_Map", Model.Contacts)
+
+<div class="section section--light contact-form-section">
+    <div class="container">
+
+        <div class="text-center">
+            <div class="title title--large">@Model.Contacts.FormTitle</div>
+            @if (!String.IsNullOrEmpty(Model.Contacts.FormDescription))
+            {
+                <div class="text text--dark">@Model.Contacts.FormDescription</div>
+            }
+        </div>
+
+        <div class="text-center">
+            <h4 class="title text-danger">@Model.Contacts.FormErrorMessage</h4>
+        </div>
+
+    </div>
+</div>

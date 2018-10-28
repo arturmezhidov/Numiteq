@@ -1,0 +1,52 @@
+﻿.contact-form-section {
+
+    .form {
+        text-align: center;
+
+        &__inner {
+            display: inline-block;
+            width: 650px;
+            text-align: left;
+
+            .col-md-6 {
+                &:first-child {
+                    padding-right: 7px;
+                }
+
+                &:last-child {
+                    padding-left: 7px;
+                }
+            }
+        }
+
+        .form-control {
+            padding: 22px;
+            border: 2px solid #EEE;
+
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: #CCC;
+                opacity: 1; /* Firefox */
+            }
+
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: #CCC;
+            }
+
+            &::-ms-input-placeholder { /* Microsoft Edge */
+                color: #CCC;
+            }
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .form-button {
+            margin-top: 20px;
+
+            .btn {
+                padding: 15px 130px;
+            }
+        }
+    }
+}

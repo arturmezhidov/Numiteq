@@ -1,5 +1,61 @@
-﻿@{
+﻿@model Numiteq.ViewModels.ContactUs.FormViewModel
+
+@{
     ViewData["Title"] = "Contact Us";
+    var PageModel = (Numiteq.ViewModels.ContactUs.ContactsViewModel)ViewData["ContactUsPageData"];
 }
 
-<h2>@ViewData["Title"]</h2>
+@Html.Partial("_Map")
+
+
+<div class="section section--light contact-form-section">
+    <div class="container">
+        <div class="text-center">
+            <div class="title title--large">@PageModel.FormTitle</div>
+            @if (!String.IsNullOrEmpty(PageModel.FormDescription))
+            {
+                <div class="text text--dark">@PageModel.FormDescription</div>
+            }
+        </div>
+        <form method="post" class="form">
+            <div class="form__inner">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input asp-for="Name" class="form-control" placeholder="Your name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Company" class="form-control" placeholder="Your company" />
+                            <span asp-validation-for="Company" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input asp-for="Email" class="form-control" placeholder="Email address" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Phone" class="form-control" placeholder="Phone number" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <textarea asp-for="Message" class="form-control" placeholder="Message"></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+
+                <div class="form-button text-center">
+                    <button type="submit" class="btn btn-dark btn--circle">Send</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -24,3 +24,16 @@ a:hover {
     cursor: pointer;
     transition: 0.5s ease-out;
 }
+
+.field-validation-error {
+    display: block;
+    margin-top: 5px;
+
+    span {
+        color: tomato;
+    }
+}
+
+.input-validation-error {
+    border-color: tomato;
+}
