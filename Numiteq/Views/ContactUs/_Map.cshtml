@@ -1,7 +1,58 @@
 ﻿@model Numiteq.ViewModels.ContactUs.ContactsViewModel
 
-<br />
-<br />
-<br />
-<br />
-<br />
+<div class="map-section">
+    <div id="map" class="map-container"></div>
+    <div class="contacts-window">
+        <div class="title title--medium">@Model.Title</div>
+        <div class="text text--dark text--small">@Model.Description</div>
+        <div class="contacts-window__phone">@Model.Phone</div>
+        <a class="contacts-window__email" href="mailto:@Model.Email">@Model.Email</a>
+        <div class="contacts-window__address">@Model.Address</div>
+    </div>
+</div>
+
+<script>
+    var map;
+    function initMap() {
+        var styles = [{
+            "featureType": "all", "elementType": "labels.text.fill", "stylers": [{ "saturation": 36 }, { "color": "#000000" }, { "lightness": 40 }]
+        }, {
+            "featureType": "all", "elementType": "labels.text.stroke", "stylers": [{ "visibility": "on" }, { "color": "#000000" }, { "lightness": 16 }]
+        }, {
+            "featureType": "all", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }]
+        }, {
+            "featureType": "administrative", "elementType": "geometry.fill", "stylers": [{ "color": "#000000" }, { "lightness": 20 }]
+        }, {
+            "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{ "color": "#000000" }, { "lightness": 17 }, { "weight": 1.2 }]
+        }, {
+            "featureType": "landscape", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 20 }]
+        }, {
+            "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 21 }]
+        }, {
+            "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{ "color": "#000000" }, { "lightness": 17 }]
+        }, {
+            "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#000000" }, { "lightness": 29 }, { "weight": 0.2 }]
+        }, {
+            "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 18 }]
+        }, {
+            "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 16 }]
+        }, {
+            "featureType": "transit", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 19 }]
+        }, {
+            "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#000000" }, { "lightness": 17 }]
+        }];
+        var latlng = { lat: @Model.Latitude, lng: @Model.Longitude };
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: latlng,
+            zoom: 15,
+            disableDefaultUI: true
+        });
+        map.setOptions({ styles: styles });
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            icon: '/images/map-marker.png',
+            title: 'Numiteq'
+        });
+    }
+</script>

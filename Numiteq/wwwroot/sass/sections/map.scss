@@ -1,0 +1,43 @@
+﻿@import '../variables.scss';
+
+.map-section {
+    position: relative;
+
+    .map-container {
+        height: 100vh;
+
+        p.gm-style-pbt {
+            max-width: 350px;
+            margin: auto;
+        }
+    }
+
+    .contacts-window {
+        position: absolute;
+        top: 25%;
+        left: 7%;
+        max-width: 400px;
+        padding: 40px 40px 60px;
+        background: $primary-color-light;
+
+        &__phone {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 30px 0 20px;
+        }
+
+        &__email {
+            display: block;
+            font-weight: 100;
+            font-style: italic;
+            text-decoration: underline;
+            color: $primary-color-dark;
+        }
+
+        &__address {
+            font-weight: 500;
+            margin-top: 20px;
+            white-space: pre-line;
+        }
+    }
+}

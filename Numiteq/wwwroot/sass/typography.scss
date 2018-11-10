@@ -9,6 +9,10 @@
         font-size: 14px !important;
     }
 
+    &--medium {
+        font-size: 16px !important;
+    }
+
     &--dark {
         color: $primary-color-dark !important;
     }
@@ -28,6 +32,11 @@
     &--small {
         font-size: 20px;
         margin: 20px 0;
+    }
+
+    &--medium {
+        font-size: 28px;
+        margin-bottom: 20px;
     }
 
     &--large {

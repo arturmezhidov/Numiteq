@@ -93,6 +93,8 @@ a:hover {
   white-space: pre-wrap; }
   .text--small {
     font-size: 14px !important; }
+  .text--medium {
+    font-size: 16px !important; }
   .text--dark {
     color: #343434 !important; }
   .text--light {
@@ -106,6 +108,9 @@ a:hover {
   .title--small {
     font-size: 20px;
     margin: 20px 0; }
+  .title--medium {
+    font-size: 28px;
+    margin-bottom: 20px; }
   .title--large {
     font-size: 36px;
     margin-bottom: 30px; }
@@ -123,7 +128,8 @@ a:hover {
     text-transform: uppercase; }
 
 .navbar-container {
-  position: relative; }
+  position: relative;
+  z-index: 9; }
   .navbar-container .navbar {
     position: absolute;
     width: 100%;
@@ -131,30 +137,6 @@ a:hover {
     .navbar-container .navbar .nav-item {
       margin-right: 20px; }
 
-/*$bg-white: #ffffff;
-$color-white-trans: rgba(255,255,255, .5);
-
-$title: #343434;
-$title-descr: #767676;
-$background-text: #232323;
-
- 
-
-// Carousel
-.carousel-item {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-    }
-}
-
- 
- 
-*/
 .header {
   background-size: cover;
   background-position: center; }
@@ -163,9 +145,7 @@ $background-text: #232323;
     display: block;
     margin: 0;
     width: 100%;
-    height: -moz-available;
-    height: -webkit-fill-available;
-    height: fill-available;
+    height: 100vh;
     background: rgba(5, 5, 5, 0.8); }
   .header .text {
     margin: 60px 0; }
@@ -235,6 +215,35 @@ $background-text: #232323;
 
 .step-section .step__list {
   margin-top: 80px; }
+
+.map-section {
+  position: relative; }
+  .map-section .map-container {
+    height: 100vh; }
+    .map-section .map-container p.gm-style-pbt {
+      max-width: 350px;
+      margin: auto; }
+  .map-section .contacts-window {
+    position: absolute;
+    top: 25%;
+    left: 7%;
+    max-width: 400px;
+    padding: 40px 40px 60px;
+    background: #F8F8F8; }
+    .map-section .contacts-window__phone {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 30px 0 20px; }
+    .map-section .contacts-window__email {
+      display: block;
+      font-weight: 100;
+      font-style: italic;
+      text-decoration: underline;
+      color: #343434; }
+    .map-section .contacts-window__address {
+      font-weight: 500;
+      margin-top: 20px;
+      white-space: pre-line; }
 
 .contact-form-section .form {
   text-align: center; }

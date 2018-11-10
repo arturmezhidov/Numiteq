@@ -1,5 +1,6 @@
 ﻿.navbar-container {
     position: relative;
+    z-index: 9;
 
     .navbar {
         position: absolute;
@@ -10,28 +11,3 @@
         }
     }
 }
-
-/*$bg-white: #ffffff;
-$color-white-trans: rgba(255,255,255, .5);
-
-$title: #343434;
-$title-descr: #767676;
-$background-text: #232323;
-
- 
-
-// Carousel
-.carousel-item {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-    }
-}
-
- 
- 
-*/

@@ -5,8 +5,7 @@
     var PageModel = (Numiteq.ViewModels.ContactUs.ContactsViewModel)ViewData["ContactUsPageData"];
 }
 
-@Html.Partial("_Map")
-
+@Html.Partial("_Map", PageModel)
 
 <div class="section section--light contact-form-section">
     <div class="container">
@@ -58,4 +57,5 @@
 
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3TAfH2PO9Fp-HIgUQ37GFn5J9MYuFqVQ&callback=initMap" async defer></script>
 }
